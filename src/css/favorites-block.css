@@ -1,0 +1,34 @@
+.common-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1440px;
+  width: calc((100% - 32px) / 1);
+  height: 800px;
+  padding: 0;
+  background-color: #f4f4f4;
+  border: none;
+}
+
+.favorites-block-open-btn {
+  width: 265px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 60px;
+  background: #242424;
+}
+
+.title-favorites {
+  color: #242424;
+  font-family: Neue Montreal;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -0.88px;
+}
+
+.favorites-block-open-btn {
+  background-color: #242424;
+}
