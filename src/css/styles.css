@@ -18,17 +18,26 @@
 
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+@font-face {
+  font-family: 'Neue Montreal', sans-serif;
+  src: url('../fonts/NeueMontreal-Regular.woff2') format('woff2'),
+      url('../fonts/NeueMontreal-Regular.woff') format('woff'),
+      url('../fonts/NeueMontreal-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Italic.woff2') format('woff2'),
+      url('../fonts/NeueMontreal-Italic.woff') format('woff'),
+      url('../fonts/NeueMontreal-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
 }
