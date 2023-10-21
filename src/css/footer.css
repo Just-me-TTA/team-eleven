@@ -1,0 +1,84 @@
+footer {
+    background-color: #242424;
+}
+
+.container-footer {
+    margin-left: 20px;
+    max-width: 335px;
+    width: 100%;
+}
+
+p,
+h1,
+h2 {
+    color: #F4F4F4;
+}
+
+.footer-top {
+    margin-top: 40px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    gap: 12px;
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-family: Neue Montreal;
+}
+
+.feedback-p {
+    margin-bottom: 20px;
+}
+
+.email {
+    margin-bottom: 20px;
+    background: #242424;
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 12px 12px 14px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid #F4F4F4;
+    color: #F4F4F4;
+}
+
+.submit-button {
+    margin-bottom: 100px;
+    display: flex;
+    max-width: 335px;
+    width: 100%;
+    padding: 12px 152px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 30px;
+    background: #F4F4F4;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right {
+    text-align: right;
+}
+
+/* 768PX */
+
+@media screen and (min-width: 768px) {}
+
+/* 1280PX */
+@media screen and (min-width: 1280px) {}
