@@ -1,17 +1,31 @@
+const btnCategories = document.querySelectorAll(".btn-categories");
 const containerForImages = document.querySelector('.js-container-for-images');
-const bodyPartsFilterButton = document.getElementById('bodyPartsFilterButton');
 
-// Отримати категорії та вставити їх у блок
-function fetchCategories(filterValue) {
-  fetch(`https://your-energy.b.goit.study/api/filters?filter=${filterValue}`)
+// Отримайте кнопки сторінок
+const btnNumbers = document.querySelectorAll(".btn-number");
+
+// Визначте поточний активний фільтр та сторінку
+let activeFilter = 'Body parts';
+let activePage = 1;
+
+// Опишіть функцію для завантаження категорій за вибраним фільтром та сторінкою
+function loadCategories() {
+  // Отримайте дані для поточного фільтра та сторінки
+  fetch(`https://your-energy.b.goit.study/api/filters?filter=${activeFilter}&page=${activePage}`)
     .then(response => response.json())
-    .then(data => handleResponse(data))
-    .catch(error => console.error('Помилка при отриманні категорій: ', error));
+    .then(data => {
+      // Обробка отриманих даних
+      handleResponse(data);
+    })
+    .catch(error => {
+      console.error('Помилка при отриманні категорій: ', error);
+    });
 }
 
 function handleResponse(data) {
-  const resultsHtml = data.results.map(({ filter, imgURL, name }) => {
-    return  ` <div class="gallery__item">
+  let results = data.results;
+  let resultsHtml = results.map(({ filter, name, imgURL }) => {
+    return ` <div class="gallery__item">
         <a class="gallery__link" href="#">
             <img
             class="gallery__image"
@@ -23,19 +37,30 @@ function handleResponse(data) {
         <p class="filterImage">${filter}</p>
         </div>`;
   }).join('');
-
   containerForImages.innerHTML = resultsHtml;
 }
 
-// Зробити кнопку "Body parts" активною та завантажити категорії
-bodyPartsFilterButton.classList.add('active');
-fetchCategories('Body parts');
-
-// Опціонально: додати обробник подій для інших категорій
-const btnCategories = document.querySelectorAll(".btn-categories");
+// Додайте обробник події для кнопок фільтрів
 btnCategories.forEach(element => {
   element.addEventListener('click', event => {
-    const categoryFilterValue = event.target.dataset.cgid;
-    fetchCategories(categoryFilterValue);
+    // Отримайте значення фільтра
+    activeFilter = event.target.dataset.cgid;
+    // Встановіть сторінку 1 при натисканні на фільтр
+    activePage = 1;
+    // Завантажте категорії для обраного фільтра та сторінки 1
+    loadCategories();
   });
 });
+
+// Додайте обробник подій для кнопок сторінок
+btnNumbers.forEach(element => {
+  element.addEventListener('click', event => {
+    // Отримайте номер сторінки
+    activePage = event.target.dataset.numpage;
+    // Завантажте категорії для поточного фільтру та обраної сторінки
+    loadCategories();
+  });
+});
+
+// Завантажте початкову сторінку при завантаженні сторінки
+loadCategories();
