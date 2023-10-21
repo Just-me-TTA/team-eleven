@@ -34,7 +34,7 @@
 }
 
 @font-face {
-  font-family: 'Neue Montreal';
+  font-family: 'Neue Montreal', sans-serif;
   src: url('../fonts/NeueMontreal-Italic.woff2') format('woff2'),
       url('../fonts/NeueMontreal-Italic.woff') format('woff'),
       url('../fonts/NeueMontreal-Italic.ttf') format('truetype');
