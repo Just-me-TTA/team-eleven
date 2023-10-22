@@ -20,7 +20,7 @@ const ref = {
 const { addFavoriteButton, giveRatingButton, openModalBtn, exerciseList, modal, closeModalBtn } = ref;
 
 function openExerciseModal() {
-    const exerciseID = '64f389465ae26083f39b17a5'; // ID вправи
+    const exerciseID = '64f389465ae26083f39b17a2'; // ID вправи
     fetchExerciseData(exerciseID)
         .then(data => {
             const exerciseMarkup = createExerciseMarkup(data);
@@ -28,7 +28,6 @@ function openExerciseModal() {
         });
 
     modal.style.display = 'block';
-    modal.addEventListener('click', closeExerciseModal);
     closeModalBtn.addEventListener('click', closeExerciseModal);
     window.addEventListener('keydown', handleEscKey);
 }
