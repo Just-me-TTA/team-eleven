@@ -18,22 +18,32 @@ const ref = {
 };
 
 const { addFavoriteButton, giveRatingButton, openModalBtn, exerciseList, modal, closeModalBtn } = ref;
+let isModalOpen = false;
 
 function openExerciseModal() {
-    const exerciseID = '64f389465ae26083f39b17a2'; // ID вправи
-    fetchExerciseData(exerciseID)
-        .then(data => {
-            const exerciseMarkup = createExerciseMarkup(data);
-            exerciseList.innerHTML = exerciseMarkup;
-        });
+    if (!isModalOpen) {
+        const exerciseID = '64f389465ae26083f39b17a2'; // ID вправи
+        fetchExerciseData(exerciseID)
+            .then(data => {
+                const exerciseMarkup = createExerciseMarkup(data);
+                exerciseList.innerHTML = exerciseMarkup;
 
-    modal.style.display = 'block';
-    closeModalBtn.addEventListener('click', closeExerciseModal);
-    window.addEventListener('keydown', handleEscKey);
+                addFavoriteButton.classList.remove('is-hidden');
+                giveRatingButton.classList.remove('is-hidden');
+            });
+
+        isModalOpen = true;  
+        modal.classList.add('is-open');
+        closeModalBtn.addEventListener('click', closeExerciseModal);
+        window.addEventListener('keydown', handleEscKey);
+    }
 }
 
 function closeExerciseModal() {
-    modal.style.display = 'none';
+    modal.classList.remove('is-open');
+    addFavoriteButton.classList.add('is-hidden');
+    giveRatingButton.classList.add('is-hidden');
+    isModalOpen = false;
 
     // Зняття обробників подій при закритті
     modal.removeEventListener('click', closeExerciseModal);

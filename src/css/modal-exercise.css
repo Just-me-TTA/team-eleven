@@ -17,6 +17,7 @@ li {
     margin: 0;
 }
 
+
 .is-hidden {
     display: none;
 }
@@ -213,7 +214,7 @@ display: block;
 }
 
 .give-rating:hover,
-.give-rating:active{
+.give-rating:focus{
 background: #F4F4F4;
     color:#242424;
 }
@@ -310,6 +311,18 @@ color:#F4F4F4;
     
 
 }
+.modal {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Відкрите модальне вікно */
+.modal.is-open {
+    display: block;
+    opacity: 1;
+}
+
 /*Планшет*/
 @media screen and (min-width: 768px) {
     .container-modal {
