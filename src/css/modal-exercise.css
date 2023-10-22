@@ -1,0 +1,314 @@
+
+
+
+.container-modal {
+    max-width: 335px;
+    border-radius: 20px;
+    background: #242424;
+    padding-top: 14px;
+   
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.exercise-list__img {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+}
+
+.exercise-list__title {
+    color: #F4F4F4;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    padding-left: 20px;
+}
+
+
+
+.line {
+    width: 295px;
+    height: 2px;
+    background-color: rgba(244, 244, 244, 0.20);
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+.rating_value {
+    padding-top: 8px;
+    padding-left: 20px;
+    display: flex;
+    gap: 8px;
+}
+.rating_value span{
+color: #F4F4F4;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+.description {
+    font-feature-settings: "clig" off, "liga" off;
+    color: rgba(244, 244, 244, 0.60);
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 20px  20px;
+}
+
+
+.start {
+    padding-top: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.start-body {
+    color: rgba(244, 244, 244, 0.40);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 20px;
+
+}
+
+.start-body span {
+    color: #F4F4F4;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+
+.start-body-rate {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 8px;
+}
+
+.start-calories {
+    color: rgba(244, 244, 244, 0.40);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.start-calories span {
+    color: #F4F4F4;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    display: flex;
+}
+
+.btn-btn {
+    margin-top: 40px;
+}
+
+.add-favorite {
+    display: inline-flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 30px;
+    background: #F4F4F4;
+    margin-left: 20px;
+    margin-right: 6px;
+    margin-bottom: 20px;
+    color: #242424;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+.add-favorite span{
+display: block;
+    width: 18px;
+    height: 18px;
+}
+.add-favorite-svg{
+    width: 18px;
+        height: 18px;
+        stroke: #242424;
+        fill: transparent;
+}
+.give-rating {
+    display: inline-flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 30px;
+    border: 1px solid #F4F4F4;
+    background: #242424;
+    color: #F4F4F4;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+.closeModalBtn{
+    display: block;
+        margin-left: auto;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    
+}
+
+
+  .is-hidden {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+  }
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap:2px;
+}
+
+.yellow-star {
+    width: 18px;
+    height: 18px;
+    background-color: hsla(40, 90%, 49%, 1);
+    clip-path: polygon(50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%);
+    
+   
+}
+.half-filled-star{
+ width: 18px;
+    height: 18px;
+    background-color: hsla(40, 90%, 49%, 1);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.gray-star {
+    background-color: hsla(0, 0%, 96%, 0.2);
+    width: 18px;
+        height: 18px;
+    clip-path: polygon(50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%);
+    
+
+}
+/*Планшет*/
+@media screen and (min-width: 768px) {
+    .container-modal {
+        max-width: 704px;
+        padding: 32px;
+    }
+ 
+        .container-wide {
+            max-width: 704px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+ 
+        .container-wide .exercise-list__img {
+            max-width: 270px;
+            margin-right: 32px;
+ 
+        }
+    
+
+        .container-modal .exercise-list__img {
+            width: 270px;
+            height: 259px;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+  }
+.description{
+    padding-top: 16px;
+}
+.start{
+    padding-top: 0px;
+}
+
+
+  /** ======== DESKTOP ======== */
+
+  @media screen and (min-width: 1280px) {
+      .modal-exercise {
+          max-width: 708px;
+      }
+  }
+
+ 
+
+
