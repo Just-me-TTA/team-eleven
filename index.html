@@ -13,8 +13,8 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/team-eleven/assets/index-9e0a5a28.js"></script>
-    <link rel="stylesheet" href="/team-eleven/assets/styles-1d5f7d68.css">
+    <script type="module" crossorigin src="/team-eleven/assets/quote-bab13b9e.js"></script>
+    <link rel="stylesheet" href="/team-eleven/assets/quote-7d47ffbe.css">
   </head>
   <body>
     <header class="header">
@@ -32,8 +32,44 @@
 
 <h3>Обери вправу</h3>
 
-<h4>Цитата дня</h4>
-<h5>ЛАРИСА РОБИТЬ</h5>
+<div class="quote">
+  <div class="quote-block">
+    <div class="quote-block-markup">
+      <svg class="quote-icon-runner" width="34" heigt="32">
+        <use href="../img/icons.svg#icon-runner"></use>
+      </svg>
+      <h3 class="quote-text">Quote of the day</h3>
+      <svg class="quote-icon-quotes" width="20" heigt="20">
+        <use href="../img/icons.svg#icon-quotes"></use>
+      </svg>
+    </div>
+    <div class="js-quote"></div>
+  </div>
+
+  <div class="quote-imeges"></div>
+
+  <div class="quote-info-block">
+    <div class="quote-info-icon">
+      <svg class="icon-dumbbell" width="20" heigt="20">
+        <use href="../img/icons.svg#icon-dumbbell"></use>
+      </svg>
+    </div>
+    <div class="quote-info-text">
+      <h3 class="quote-info-title">110 min</h3>
+      <p class="quote-info-content">Daily norm of sports</p>
+      <p class="quote-content-text">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- <script type="module" src="../js/quote.js"></script> -->
 
 <section class="categories">
   <div class="cont-categor">
@@ -64,30 +100,33 @@
   </ul>
 </section>
 
-
-
 <div class="container">
-    <div class="backdrop" data-modal>
+  <div class="backdrop" data-modal>
     <button id="openModalBtn" class="openModalBtn">O</button>
-    <button id="closeModalBtn" class="closeModalBtn"><svg class="button_icon" width="8" height="8">
-        <use href="../img/javascript.svg#icon-close-black-18dp-2-1" /></svg></button>
+    <button id="closeModalBtn" class="closeModalBtn">
+      <svg class="button_icon" width="8" height="8">
+        <use href="../img/javascript.svg#icon-close-black-18dp-2-1" />
+      </svg>
+    </button>
     <div class="modal" id="outerModal">
-        <div class="modal-content">
-            <div class="exercise ">
-                <!-- exercise go here -->
-            </div>
-
-            <button type="button" class="add-favorite">Add to favorites<span>
-                <svg class="add-favorite-svg">
-                    <use href="/team-eleven/assets/javascript-5b2ae96d.svg#icon-heart"></use>
-                </svg></span>
-            </button>
-            <button type="button" class="give-rating">Give a rating</button>
+      <div class="modal-content">
+        <div class="exercise">
+          <!-- exercise go here -->
         </div>
+
+        <button type="button" class="add-favorite">
+          Add to favorites<span>
+            <svg class="add-favorite-svg">
+              <use href="/team-eleven/assets/javascript-5b2ae96d.svg#icon-heart"></use></svg
+          ></span>
+        </button>
+        <button type="button" class="give-rating">Give a rating</button>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 
+<!-- <script src="./js/modal-exercise.js" type="module"></script> -->
 
 <div class="container">
   <button class="close-modal-btn" type="button"><img src="" /> X</button>
