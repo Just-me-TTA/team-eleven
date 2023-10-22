@@ -12,7 +12,9 @@
     display: none;
 }
 
-.hero-icon {}
+.hero-icon {
+
+}
 
 .hero-title {
 
@@ -51,6 +53,7 @@
 .hero-image {
     background-image: url(../img/women-sportswear-working-mobile.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 30px;
     height: 450px;
     margin-bottom: 20px;
@@ -137,7 +140,7 @@
         font-size: 74px;
         line-height: 74px;
         letter-spacing: -1.48px;
-        margin-right: 477px;
+        margin-right: 450px;
     }
 
     .hero-span {
@@ -180,5 +183,10 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
+    }
+
+    .hero-tags-item:is(:hover, :focus) {
+        background-color: #242424;
+        color: #fff;
     }
 }
