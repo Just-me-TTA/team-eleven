@@ -20,7 +20,7 @@ const ref = {
 const { addFavoriteButton, giveRatingButton, openModalBtn, exerciseList, modal, closeModalBtn } = ref;
 
 function openExerciseModal() {
-    const exerciseID = '64f389465ae26083f39b17a3'; // ID вправи
+    const exerciseID = '64f389465ae26083f39b17a5'; // ID вправи
     fetchExerciseData(exerciseID)
         .then(data => {
             const exerciseMarkup = createExerciseMarkup(data);
@@ -63,16 +63,29 @@ async function fetchExerciseData(exerciseID) {
 }
 
 function createRatingStars(rating) {
-    let stars = '<div class="rating-stars">';
+    const ratingContainer = document.createElement('div');
+    ratingContainer.classList.add('rating-container');
+
+    // Розрахунок кількості повних та напівзаповнених зірок
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.1 && rating % 1 <= 0.9;
+
     for (let i = 0; i < 5; i++) {
-        if (i < rating) {
-            stars += '<span class="star-filled">★</span>';
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        if (i < fullStars) {
+            star.classList.add('yellow-star');
+        } else if (i === fullStars && hasHalfStar) {
+            star.classList.add('half-filled-star');
         } else {
-            stars += '<span class="star-empty">☆</span>';
+            star.classList.add('gray-star');
         }
+
+        ratingContainer.appendChild(star);
     }
-    stars += '</div>';
-    return stars;
+
+    return ratingContainer;
 }
 
 function createExerciseMarkup(data) {
@@ -90,6 +103,7 @@ function createExerciseMarkup(data) {
             popularity,
             gifUrl,
         } = data;
+        
         const ratingStars = createRatingStars(rating);
 
         return `<section class="modal-exercise container-wide">
@@ -98,7 +112,7 @@ function createExerciseMarkup(data) {
             </div>
             <div class="exercise-details">
                 <h2 class="exercise-list__title">${name}</h2>
-                <div class="rating_value">${ratingStars}</div>
+              <div class="rating_value"><span> ${rating}</span> ${ratingStars.outerHTML}</div>
                 <div class="line"></div>
                 <div class="start">
                     <ul class="start-body-rate">
@@ -115,4 +129,3 @@ function createExerciseMarkup(data) {
         </section>`;
     }
 }
-
