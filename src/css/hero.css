@@ -13,7 +13,9 @@
 }
 
 .hero-icon {
-
+    display: inline-block;
+    width: 60px;
+    height: 60px;
 }
 
 .hero-title {
@@ -129,6 +131,7 @@
 
 @media screen and (min-width: 1280px) {
     .hero-container {
+        position: relative;
         max-width: 1280px;
         padding: 100px 32px 64px 32px;
         flex-direction: row;
@@ -159,6 +162,7 @@
         font-size: 18px;
         line-height: 24px;
         letter-spacing: -0.36px;
+        margin-bottom: 32px;
     }
 
     .hero-image {
@@ -173,8 +177,17 @@
     }
 
     .hero-tags {
-        display: flex;
-        flex-direction: column;
+    position: absolute;
+    top: 32%;
+    right: 32px;
+    display: flex;
+    width: 182px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-left: 1032px;
     }
 
     .hero-tags-item {
