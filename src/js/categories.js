@@ -11,7 +11,7 @@ const activeLimit = 9;
 // Опишіть функцію для завантаження категорій за вибраним фільтром та сторінкою
 function loadCategories() {
   // Отримайте дані для поточного фільтра та сторінки
-  fetch(`https://your-energy.b.goit.study/api/filters?filter=${activeFilter}&page=${activePage}&limit=${activeLimit}`)
+  fetch(https://your-energy.b.goit.study/api/filters?filter=${activeFilter}&page=${activePage}&limit=${activeLimit})
     .then(response => response.json())
     .then(data => {
       // Обробка отриманих даних
@@ -79,7 +79,7 @@ let part = "back";
 
 function loadExercise() {
   // Отримайте дані для поточного фільтра та сторінки
-  fetch(`https://your-energy.b.goit.study/api/exercises?bodypart=${part}`)
+  fetch(https://your-energy.b.goit.study/api/exercises?bodypart=${part})
     .then(response => response.json())
     .then(data => {
       // Обробка отриманих даних

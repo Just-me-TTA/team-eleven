@@ -1,17 +1,11 @@
 footer {
     background-color: #242424;
+    margin: auto;
 }
 
 .container-footer {
     margin-left: 20px;
     max-width: 335px;
-    width: 100%;
-}
-
-p,
-h1,
-h2 {
-    color: #F4F4F4;
 }
 
 .footer-top {
@@ -26,17 +20,31 @@ h2 {
     gap: 12px;
 }
 
+.footer-icon {
+    border-radius: 6px;
+    border: 1px solid rgba(244, 244, 244, 0.10);
+}
+
+
 .footer-link {
     text-decoration: none;
 }
 
-.title {
+.title-footer {
     margin-bottom: 20px;
     font-family: Neue Montreal;
+    color: #F4F4F4;
+    margin-right: 20px;
 }
 
 .feedback-p {
     margin-bottom: 20px;
+    font-size: 14px;
+    color: #F4F4F4;
+}
+
+.feedback {
+    margin-right: 20px;
 }
 
 .email {
@@ -58,27 +66,104 @@ h2 {
     display: flex;
     max-width: 335px;
     width: 100%;
-    padding: 12px 152px;
+    padding: 12px;
     justify-content: center;
     align-items: center;
     gap: 8px;
     border-radius: 30px;
     background: #F4F4F4;
+    margin-right: 20px;
 }
 
 .left {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 10px;
+    color: #C6CDD1;
 }
 
 .right {
     text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #C6CDD1;
+}
+
+.c-footer {
+    color: #C6CDD1;
 }
 
 /* 768PX */
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+
+    .container-footer {
+        min-width: 768px;
+    }
+
+    .foot {
+        height: 0px;
+    }
+
+    .title-footer {
+        display: flex;
+        order: -1;
+    }
+
+    .content-footer {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-left: auto;
+        max-width: 335px;
+        margin-right: 130px;
+    }
+
+    .email {
+        max-width: 350px;
+        width: 350px;
+    }
+
+    .submit-button {
+        min-width: 350px;
+    }
+
+    .info-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0px 32px 0px 0px;
+    }
+
+    .c-footer {
+        color: #C6CDD1;
+    }
+}
 
 /* 1280PX */
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+
+    .container-footer {
+        min-width: 1280px;
+    }
+
+    .footer-flex-container {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .content-footer {
+        align-items: center;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+}
