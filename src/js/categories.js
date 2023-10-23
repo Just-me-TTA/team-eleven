@@ -48,7 +48,7 @@ function handleResponse(data) {
   clickToImgExercise.forEach(element => {
     element.addEventListener('click', event => {
       // Отримайте значення частини тіла (part)
-      let clickedPart = event.target.dataset.cdIt;
+      let clickedPart = event.target  .dataset.cdIt;
       
       // Призначіть значення змінної part, щоб змінити фільтр вправ
       activeFilter = clickedPart;

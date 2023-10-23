@@ -70,6 +70,18 @@
 
 }
 
+.text-catecory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
 .gallery__link {
     border-radius: 0.75rem;
     background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(<path-to-image>), lightgray -42.462px 0px / 126.601% 100% no-repeat;
