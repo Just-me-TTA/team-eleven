@@ -5,3 +5,4 @@ import './js/modal-exercise';
 import './js/modal-rating';
 import './js/footer';
 import './js/quote'
+import './js/scrollup'
