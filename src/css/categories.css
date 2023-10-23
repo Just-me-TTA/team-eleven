@@ -1,6 +1,7 @@
 .categories {
     border: 1px solid red;
-
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .cont-categor {
@@ -23,7 +24,6 @@
 .list-categories {
     display: flex;
     margin-left: auto;
-    margin-right: 32px;
 }
 
 .list-categories li {
@@ -66,4 +66,19 @@
     /* Міжзображення в рядку */
     box-sizing: border-box;
     /* Ураховується padding та border у ширині */
+
+
+}
+
+.gallery__link {
+    border-radius: 0.75rem;
+    background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(<path-to-image>), lightgray -42.462px 0px / 126.601% 100% no-repeat;
+}
+
+@media screen and (min-width:1280px) {
+    .container-for-images {
+        max-width: 900px;
+        margin-left: auto;
+        margin-top: 42px;
+    }
 }
