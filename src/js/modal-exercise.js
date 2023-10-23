@@ -1,12 +1,8 @@
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
-//import 'slim-select/dist/slimselect.css';//
 import axios from 'axios';
-//import SimpleLightbox from "simplelightbox";//
-//import "simplelightbox/dist/simple-lightbox.min.css";//
 
-
-const API_URL = 'https://your-energy.b.goit.study/api/exercises';
+const BASE_URL = 'https://your-energy.b.goit.study/api';
 
 const ref = {
     openModalBtn: document.querySelector('.openModalBtn'),
@@ -14,63 +10,37 @@ const ref = {
     giveRatingButton: document.querySelector('.give-rating'),
     exerciseList: document.querySelector('.exercise'),
     modal: document.getElementById('outerModal'),
-    closeModalBtn: document.querySelector('.closeModalBtn'),
+    closeModalBtn: document.querySelector('.modal-x-button'),
+    ratingValue: document.querySelector('.modal-rating-value'),
+    modalExerciseName: document.querySelector('.exercise-list__title'),
+    modalRatingValue: document.querySelector('.modal-rating-value'),
+    modalTarget: document.querySelector('.start-target'),
+    modalBodyPart: document.querySelector('.start-body'),
+    modalEquipment: document.querySelector('.start-equipment'),
+    modalPopularity: document.querySelector('.start-popular'),
+    modalBurnedCalories: document.querySelector('.start-burned'),
+    modalDescriptionText: document.querySelector('.modal-description-text'),
+    modalGif: document.querySelector('.exercise-list__img'),
+    modalTitle: document.querySelector('.exercise-list__title'),
 };
 
-const { addFavoriteButton, giveRatingButton, openModalBtn, exerciseList, modal, closeModalBtn } = ref;
+let favoriteObj = {};
 let isModalOpen = false;
 
-function openExerciseModal() {
-    if (!isModalOpen) {
-        const exerciseID = '64f389465ae26083f39b17a2'; // ID вправи
-        fetchExerciseData(exerciseID)
-            .then(data => {
-                const exerciseMarkup = createExerciseMarkup(data);
-                exerciseList.innerHTML = exerciseMarkup;
+const openButtons = document.querySelectorAll("[data-modal-open]");
+openButtons.forEach((openModalBtnItem) => {
+  openModalBtnItem.addEventListener("click", openExerciseModal);
+});
 
-                addFavoriteButton.classList.remove('is-hidden');
-                giveRatingButton.classList.remove('is-hidden');
-            });
+ref.openModalBtn.addEventListener("click", openExerciseModal);
+ref.closeModalBtn.addEventListener("click", closeExerciseModal);
 
-        isModalOpen = true;  
-        modal.classList.add('is-open');
-        closeModalBtn.addEventListener('click', closeExerciseModal);
-        window.addEventListener('keydown', handleEscKey);
-    }
+function openExerciseModal(evt) {
+    ref.modal.classList.add("is-open"); // Додайте клас is-open, щоб відкрити модальне вікно
+
+    const exerciseId = evt.target.closest(".js-workout-card").dataset.id;
+    checkLocalStorageForId(exerciseId);
 }
-
-function closeExerciseModal() {
-    modal.classList.remove('is-open');
-    addFavoriteButton.classList.add('is-hidden');
-    giveRatingButton.classList.add('is-hidden');
-    isModalOpen = false;
-
-    // Зняття обробників подій при закритті
-    modal.removeEventListener('click', closeExerciseModal);
-    closeModalBtn.removeEventListener('click', closeExerciseModal);
-    window.removeEventListener('keydown', handleEscKey);
-}
-
-// Функція для закриття модального вікна при натисканні клавіші ESC
-function handleEscKey(event) {
-    if (event.key === 'Escape') {
-        closeExerciseModal();
-    }
-}
-
-// Додавання обробника події для кнопки "Відкрити модальне вікно"
-openModalBtn.addEventListener('click', openExerciseModal);
-
-async function fetchExerciseData(exerciseID) {
-    try {
-        const response = await axios.get(`${API_URL}/${exerciseID}`);
-        return response.data;
-    } catch (error) {
-        console.error('Помилка запиту до API:', error);
-        return null;
-    }
-}
-
 function createRatingStars(rating) {
     const ratingContainer = document.createElement('div');
     ratingContainer.classList.add('rating-container');
@@ -96,45 +66,43 @@ function createRatingStars(rating) {
 
     return ratingContainer;
 }
+const ratingStars = createRatingStars(rating);
+async function checkLocalStorageForId(id) {
+  const response = await axios.get(`${BASE_URL}/exercises/${id}`);
+    const exerciseData = response.data;
+    
+     
 
-function createExerciseMarkup(data) {
-    if (data) {
-        const {
-            bodyPart,
-            _id,
-            equipment,
-            name,
-            target,
-            description,
-            rating,
-            burnedCalories,
-            time,
-            popularity,
-            gifUrl,
-        } = data;
-        
-        const ratingStars = createRatingStars(rating);
+  // Створення та вставка рейтингу
+  const rating = parseFloat(exerciseData.rating);
+  const ratingStars = createRatingStars(rating);
+  ref.modalRatingValue.innerHTML = ''; // Очистити попередній рейтинг
+  ref.modalRatingValue.appendChild(ratingStars); // Додати новий рейтинг
+  ref.modalTarget.textContent = exerciseData.target;
+  ref.modalBodyPart.textContent = exerciseData.bodyPart;
+  ref.modalEquipment.textContent = exerciseData.equipment;
+  ref.modalPopularity.textContent = exerciseData.popularity;
+  ref.modalBurnedCalories.textContent = `${exerciseData.burnedCalories}/3 min`;
+  ref.modalDescriptionText.textContent = exerciseData.description;
+  ref.modalGif.src = exerciseData.gifUrl;
+}г
 
-        return `<section class="modal-exercise container-wide">
-            <div class="exercise-wrap">
-                <img class="exercise-list__img" src="${gifUrl}" alt="foto" loading="lazy" />
-            </div>
-            <div class="exercise-details">
-                <h2 class="exercise-list__title">${name}</h2>
-              <div class="rating_value"><span> ${rating}</span> ${ratingStars.outerHTML}</div>
-                <div class="line"></div>
-                <div class="start">
-                    <ul class="start-body-rate">
-                        <li class="start-body">target: <span>${target}</span></li>
-                        <li class="start-body">bodyPart: <span>${bodyPart}</span></li>
-                        <li class="start-body">equipment: <span>${equipment}</span></li>
-                        <li class="start-body">popularity:<span>${popularity}</span></li>
-                    </ul>
-                    <li class="start-calories">burnedCalories:<span>${burnedCalories}</span></li>
-                </div>
-                <div class="line"></div>
-                <p class="description">description:${description}</p>
-            </div>
-        </section>`;
-    }
+
+function closeExerciseModal() {
+    ref.modal.classList.remove("is-open"); 
 }
+/*
+ref.addGiveRatingModal.addEventListener("click", openGiveRatingModal);
+
+function openGiveRatingModal() {
+    // Відкрити друге модальне вікно (giveRatingModal)
+    const giveRatingModal = document.getElementById("giveRatingModal");
+    giveRatingModal.classList.add("is-open");
+
+    // Закрийте поточне модальне вікно (якщо воно вже відкрите)
+    ref.modal.classList.remove("is-open");
+
+    // Отримайте дані про обрану вправу та відобразіть їх у другому модальному вікні
+    const exerciseId = ref.modal.dataset.id;
+    checkLocalStorageForId(exerciseId);
+}*/
