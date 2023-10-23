@@ -1,3 +1,4 @@
+import './js/header-mobi-menu'
 import './js/categories';
 import './js/exercise-filter';
 import './js/favorites-block';
