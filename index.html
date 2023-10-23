@@ -13,8 +13,8 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/team-eleven/assets/quote-318ab553.js"></script>
-    <link rel="stylesheet" href="/team-eleven/assets/quote-76d81816.css">
+    <script type="module" crossorigin src="/team-eleven/assets/quote-65b60a6c.js"></script>
+    <link rel="stylesheet" href="/team-eleven/assets/quote-0f6d4356.css">
   </head>
   <body>
     <header class="header">
@@ -112,7 +112,14 @@
   </div>
 </section>
 
-<h3>Обери вправу</h3>
+<section class="exersice">
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- Add the modal content here -->
+    </div>
+  </div>
+</section>
 
 <div class="quote">
   <div class="quote-block">
@@ -180,6 +187,37 @@
     <li><button class="btn-number" data-numpage="2">2</button></li>
     <li><button class="btn-number" data-numpage="3">3</button></li>
   </ul>
+  <div class="exercise">
+    <h2 class="title-exercise">Exercises/<span id="category"></span></h2>
+    <div class="input-search">
+      <input
+        class="search-input"
+        type="text"
+        id="searchInput"
+        placeholder="Search..."
+      />
+      <!-- Search button -->
+      <button class="search-button">Search</button>
+    </div>
+
+    <ul class="list-categories">
+      <li class="item">
+        <button data-exid="Body parts" class="btn-exercise">Body parts</button>
+      </li>
+      <li class="item">
+        <button data-exid="Muscles" class="btn-exercise">Muscles</button>
+      </li>
+      <li class="item">
+        <button data-exid="Equipment" class="btn-exercise">Equipment</button>
+      </li>
+    </ul>
+    <div class="exercise-card"></div>
+    <ul class="btn-number-page">
+      <li><button class="btn-number-exercise" data-numpage="1">1</button></li>
+      <li><button class="btn-number-exercise" data-numpage="2">2</button></li>
+      <li><button class="btn-number-exercise" data-numpage="3">3</button></li>
+    </ul>
+  </div>
 </section>
 
 
