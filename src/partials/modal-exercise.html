@@ -1,22 +1,23 @@
-<div class="container-modal">
+
+<div class="container-modal ">
   <div class="backdrop" data-modal>
     <button id="openModalBtn" class="openModalBtn">O</button>
-    <button id="closeModalBtn" class="closeModalBtn">
-      <svg class="button_icon" width="8" height="8">
+    <button id="closeModalBtn" class="closeModalBtn" data-modal-close>
+      <svg class="button_icon" width="18" height="18">
         <use href="../img/javascript.svg#icon-close-black-18dp-2-1" />
-      </svg>
-    </button>
+      </svg></button> 
     <div class="modal" id="outerModal">
       <div class="modal-content">
         <div class="exercise">
           <!-- exercise go here --></div>
-      
-        <button type="button" class="add-favorite">Add to favorites<span>
+ 
+        <button type="button" class="add-favorite is-hidden ">Add to favorites<span>
             <svg class="add-favorite-svg">
               <use href="./img/javascript.svg#icon-heart"></use></svg
           ></span>
         </button>
-        <button type="button" class="give-rating">Give a rating</button>
+        <button type="button" class="give-rating is-hidden ">Give a rating</button>
+          </div>
       </div>
     </div>
   </div>
