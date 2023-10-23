@@ -1,0 +1,204 @@
+body {
+  background-color: #f4f4f4;
+}
+
+/* 0px - 767px */
+@media screen and (max-width: 767px) {
+  .main-container {
+    width: 100%;
+    min-width: 280px;
+    max-height: 2066px;
+    border: none;
+  }
+
+  .header-favorite {
+    height: 32px;
+    margin: 20px;
+  }
+
+  .title-favorites {
+    color: #242424;
+    font-family: Neue Montreal;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: -0.88px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .text-container {
+    width: 318px;
+    align-items: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+
+  .is-hidden {
+    opacity: 1;
+  }
+
+  .text-empry-exercises {
+    display: flex;
+    padding: 20, 0, 20, 0;
+    color: #242424;
+    text-align: center;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .exercise-favorites {
+    max-width: 335px;
+    height: 141px;
+    align-items: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 32px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 1px solid rgba(239, 237, 232, 0.2);
+    background: #fff;
+    padding: 16, 16, 0, 0;
+  }
+
+  .top {
+    position: relative;
+    margin-top: 16px;
+  }
+
+  .btn-workout {
+    border-radius: 20px;
+    background-color: transparent;
+  }
+
+  .btn-start {
+    background-color: transparent;
+    border: none;
+  }
+
+  .title-exercise {
+    color: #242424;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 29px;
+    margin-bottom: 18px;
+  }
+
+  .achive {
+    color: rgba(36, 36, 36, 0.4);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* 768px - 1200px */
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 100%;
+    min-width: 768px;
+    max-height: 1694px;
+    border: none;
+  }
+
+  .header-favorite {
+    width: 704px;
+    height: 52px;
+    margin: 32px, 24px;
+  }
+}
+
+/*.common-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1440px;
+    width: calc((100% - 32px) / 1);
+    height: 800px;
+    padding: 32;
+    background-color: #f4f4f4;
+    border: none;
+  }
+  .title-favor {
+    color: #242424;
+    font-family: Neue Montreal;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -0.88px;
+    margin-top: 90px;
+    margin-bottom: 44px;
+    padding-left: 32px;
+  }
+  .main-container {
+  }
+  .exercises-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 58px;
+    align-items: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .text-container {
+    width: 554px;
+  }
+  .is-hidden {
+    opacity: 1;
+  }
+  .text-empry-exercises {
+    color: #242424;
+    text-align: center;
+    font-family: Neue Montreal;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    align-items: center;
+    justify-items: center;
+  }
+  .exercise-favor {
+    display: flex;
+    width: 405px;
+    height: 141px;
+    padding: 140px 105px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 1px solid rgba(239, 237, 232, 0.2);
+    background: #fff;
+  }
+  .top {
+    position: ;
+  }
+  .sidebar {
+    width: 494px;
+    height: 100hv;
+    float: left;
+    padding-left: 32px;
+  }
+*/
