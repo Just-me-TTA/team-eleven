@@ -12,12 +12,16 @@
     display: none;
     opacity: 0;
     transition: opacity 0.3s;
+  
+    
 }
 
 /* Відкрите модальне вікно */
 .modal.is-open {
     display: block;
     opacity: 1;
+    z-index:105;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -101,6 +105,8 @@ li {
             32% 57%,
             2% 35%,
             39% 35%);
+            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+        
 
 
 }
@@ -110,6 +116,7 @@ li {
     height: 18px;
     background-color: hsla(40, 90%, 49%, 1);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
 }
 
 .gray-star {
@@ -126,6 +133,7 @@ li {
             32% 57%,
             2% 35%,
             39% 35%);
+            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
 
 
 }
@@ -217,7 +225,7 @@ padding-left: 20px;
     background-color: transparent;
     margin-right: 6px;
     color: #F4F4F4;
-    margin-left: 8px;
+   
 }
 
 .add-favorite-svg:hover,
@@ -282,8 +290,31 @@ padding-left: 20px;
 .modal-x-button:active{
     fill: #F4F4F4;
 }
+.exercise-modal-button__remove {
+    max-height: 42px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    letter-spacing: -0.02em;
 
+    background-color: #f4f4f4;
+    color: var(#242424);
+    transition: all var(--transition);
+    width: 235px;
+    height: 48px;
+    margin-left: 30px;
+}
+.exercise-modal-button__remove-icon {
+    width: 18px;
+    height: 18px;
+    stroke: var(#242424);
+    fill: transparent;
+}
 
+.exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,
+.exercise-modal-button__remove:focus .exercise-modal-button__remove-icon {
+    fill: transparent;
+    stroke: #f4f4f4;
+}
 
  @media screen and (min-width: 768px) {
     .container-modal {
