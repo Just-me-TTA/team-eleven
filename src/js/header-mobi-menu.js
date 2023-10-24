@@ -10,3 +10,9 @@ const toggleHeaderMenu = () => {
 };
 headerOpenMenuBtn.addEventListener('click', toggleHeaderMenu);
 headerCloseMenuBtn.addEventListener('click', toggleHeaderMenu);
+
+window.matchMedia('(min-width: 428px)').addEventListener('change', e => {
+  if (!e.matches) return;
+  headerMobileMenu.classList.remove('is-open');
+  headerOpenMenuBtn.setAttribute('aria-expanded', false);
+});
