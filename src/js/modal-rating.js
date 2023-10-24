@@ -69,3 +69,7 @@ for (let index = 0; index < ratingItems.length; index ++) {
     }
     }
 }
+function closeRatingModal() {
+    const ratingModal = document.getElementById('ratingModal');
+    ratingModal.classList.remove('is-open');
+}

@@ -226,7 +226,9 @@ img {
     height: 24px;
   }
   .quote-imeges {
+
     background-image: url(./img/women-tabl.jpg);
+
 
     width: 288px;
     height: 258px;
@@ -304,7 +306,9 @@ img {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
+
         background-image: url(./img/women-desktop-2x.jpg);
+
 
       }
     }
