@@ -7,9 +7,7 @@ img {
 }
 .quote {
   background-color: #F4F4F4;
-
   width: 335px;
-
   margin: 0 auto;
 }
 
@@ -324,7 +322,6 @@ img {
   }
   .quote-info-icon {
     margin: 40px 0 0 40px;
-
     width: 32px;
   }
 
@@ -336,7 +333,6 @@ img {
 
   }
   .quote-info-text {
-
     padding: 0;
     margin-top: 40px;
     margin-left: 16px;
