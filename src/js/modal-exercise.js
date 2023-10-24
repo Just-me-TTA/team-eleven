@@ -88,8 +88,8 @@ async function checkLocalStorageForId(id) {
   ref.modalPopularity.textContent = exerciseData.popularity;
   ref.modalBurnedCalories.textContent = `${exerciseData.burnedCalories}/3 min`;
   ref.modalDescriptionText.textContent = exerciseData.description;
-    ref.modalGif.src = exerciseData.gifUrl;
-    ref.modalTitle.textContent = exerciseData.name;
+  ref.modalGif.src = exerciseData.gifUrl;
+  ref.modalTitle.textContent = exerciseData.name;
     
 }
 
@@ -107,6 +107,7 @@ ref.addFavoriteButton.addEventListener("click", function() {
 
 
 ref.giveRatingButton.addEventListener('click', function() {
-    ratingModal.classList.add('is-open'); // Відкрити другу модалку
-});
 
+    ref.modal.classList.remove('is-open');
+    ref.ratingModal.classList.add('is-open');
+});
