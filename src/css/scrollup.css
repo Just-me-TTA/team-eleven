@@ -4,7 +4,8 @@
     transition: font-size 0.2s ease-in-out;
     right: 50px;
     bottom: 50px;
-    background-color: rgba(0, 123, 255, 0.5);
+    background-color: rgba(36, 36, 36, 0.5);
+    box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.5);
     color: #fff;
     box-shadow: 0 0 30px rgba(240, 99, 64, 0.3);
     border: none;
@@ -13,20 +14,28 @@
     border-radius: 50%;
     padding: 12px 16px;
     text-align: center;
-    
-    /* line-height: 70px; */
-
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+#toTopBtn::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
 #toTopBtn:hover {
-background-color: rgba(0, 123, 255, 0.9);
-font-size: 36px;
+    background-color: rgba(36, 36, 36, 0.8);
+    font-size: 36px;
 }
 
 #toTopBtn:active {
-    background-color: #0056b3;
+    background-color: #000000;
 }
 
 #toTopBtn.shown {
