@@ -13,8 +13,8 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/team-eleven/assets/scrollup-4052d981.js"></script>
-    <link rel="stylesheet" href="/team-eleven/assets/scrollup-52c97cd3.css">
+    <script type="module" crossorigin src="/team-eleven/assets/scrollup-51e6dded.js"></script>
+    <link rel="stylesheet" href="/team-eleven/assets/scrollup-a3d56836.css">
   </head>
   <body>
     <header class="header">
@@ -279,7 +279,7 @@
   <li class="js-workout-card" data-id="64f389465ae26083f39b17a2">
     <button class="openModalBtn" data-modal-open>Відкрити модальне вікно</button>
   </li>
-
+</ul>
 
 <div class="modal is-hidden" id="outerModal">
   <div class="modal-content container-modal">
@@ -289,8 +289,8 @@
       </svg>
     </button>
     <div class="modal-describtion-container">
-      <img class="exercise-list__img" src="" alt="exercise example" />
-      <div class="exercise">
+        <img class="exercise-list__img" src="" alt="exercise example" />
+      <div class="modal-text-container">
         <h3 class="exercise-list__title"></h3>
         <div class="modal-rating">
           <span class="modal-rating-value"></span>
@@ -322,27 +322,26 @@
             </li>
 
           </ul>
-          <li>
           <p class="line"></p>
-          </li>
-          </div>
           <p class="description">
             <span class="modal-description-text">
               text-text-text
             </span>
           </p>
-       
       </div>
-    </div>
+      </div>
+      </div>
     <button type="button" class="add-favorite is-hidden">Add to favorites<span>
         <svg class="add-favorite-svg">
           <use href="/team-eleven/assets/javascript-5b2ae96d.svg#icon-heart"></use>
         </svg>
       </span>
     </button>
-    <button type="button" class="give-rating is-hidden">Give a rating</button>
+    <button type="button" class="give-rating is-hidden" id="openRatingModalBtn">Give Rating</button>
+    </div>
   </div>
   </div>
+  
 
 
 <div class="container">
@@ -385,7 +384,7 @@
 
     <button class="form-button" type="submit">Send</button>
   </form>
-</div>-->
+</div>
 
 
     <button id="toTopBtn">UP</button>
