@@ -25,6 +25,7 @@ function loadCategories() {
 function handleResponse(data) {
   let results = data.results;
   let resultsHtml = results.map(({ filter, name, imgURL }) => {
+     const formattedName = name.charAt(0).toUpperCase() + name.slice(1);
     return ` <div class="gallery__item" data-cdIt="${name}>
         <a class="gallery__link" href="#" >
             <img
@@ -32,11 +33,12 @@ function handleResponse(data) {
             src="${imgURL}"
             alt="${name}"
             />
-        </a>
-        <div class="text-category">
-        <p class="textImage">${name}</p>
+            <div class="text-category">
+        <p class="textImage">${formattedName}</p>
         <p class="filterImage">${filter}</p>
         </div>
+        </a>
+        
         
         </div>`;
   }).join('');
@@ -46,6 +48,8 @@ function handleResponse(data) {
 // Додайте обробник події для кнопок фільтрів
 btnCategories.forEach(element => {
   element.addEventListener('click', event => {
+    btnCategories.forEach(btn => btn.classList.remove('current'));
+    element.classList.add('current');
     // Отримайте значення фільтра
     activeFilter = event.target.dataset.cgid;
     // Встановіть сторінку 1 при натисканні на фільтр
