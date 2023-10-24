@@ -13,8 +13,8 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/team-eleven/assets/scrollup-51e6dded.js"></script>
-    <link rel="stylesheet" href="/team-eleven/assets/scrollup-a3d56836.css">
+    <script type="module" crossorigin src="/team-eleven/assets/scrollup-f9fcf715.js"></script>
+    <link rel="stylesheet" href="/team-eleven/assets/scrollup-08dbe47c.css">
   </head>
   <body>
     <header class="header">
@@ -285,7 +285,7 @@
   <div class="modal-content container-modal">
     <button class="modal-x-button" id="closeModalBtn" type="button">
       <svg class="button_icon" width="18" height="18">
-        <use href="../img/javascript.svg#icon-close-black-18dp-2-1" />
+        <use href="/team-eleven/assets/javascript-55be6e3b.svg#icon-close-black-18dp-2-1" />
       </svg>
     </button>
     <div class="modal-describtion-container">
@@ -293,7 +293,7 @@
       <div class="modal-text-container">
         <h3 class="exercise-list__title"></h3>
         <div class="modal-rating">
-          <span class="modal-rating-value"></span>
+          <span class="modal-rating-value">4</span>
         </div>
         <div class="modal-description-block">
           <li>
@@ -333,22 +333,32 @@
       </div>
     <button type="button" class="add-favorite is-hidden">Add to favorites<span>
         <svg class="add-favorite-svg">
-          <use href="/team-eleven/assets/javascript-5b2ae96d.svg#icon-heart"></use>
+          <use href="/team-eleven/assets/javascript-55be6e3b.svg#icon-heart"></use>
         </svg>
       </span>
     </button>
-    <button type="button" class="give-rating is-hidden" id="openRatingModalBtn">Give Rating</button>
-    </div>
+  <button type="button" class="give-rating" id="openRatingModalBtn">Give Rating</button>
+      <div class="exercise-modal-button-card_remove is-hidden"> <button type="button" class="exercise-modal-button__remove">
+          Remove from favorites
+          <span>
+            <svg class="exercise-modal-button__remove-icon">
+              <use href="/team-eleven/assets/icons-43770a5c.svg#icon-trash" width="18" height="18"></use>
+            </svg>
+          </span>
+        </button>
+        </div>
+
   </div>
   </div>
   
 
-
+<div id="ratingModal" class="modal">  
 <div class="container">
-  <button class="close-modal-btn" type="button"><img src="" /> X</button>
-
+<button class="close-modal-btn" onclick="closeRatingModal()" type="button"><svg class="button_icon" width="18"
+    height="18">
+    <use href="/team-eleven/assets/javascript-55be6e3b.svg#icon-close-black-18dp-2-1" />
+  </svg></button>
   <p class="rating-text">Rating</p>
-
   <div class="rating js-rating">
     <div class="rating__value">0.0</div>
     <div class="rating__body">
@@ -385,7 +395,7 @@
     <button class="form-button" type="submit">Send</button>
   </form>
 </div>
-
+</div>
 
     <button id="toTopBtn">UP</button>
 
