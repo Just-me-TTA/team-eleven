@@ -1,3 +1,13 @@
+
+.container-modal {
+    max-width: 335px;
+    border-radius: 20px;
+    background: #242424;
+    padding-top: 14px;
+
+
+}
+
 .modal {
     display: none;
     opacity: 0;
@@ -12,25 +22,12 @@
 
 
 
-
-
-.container-modal {
-    max-width: 335px;
-    border-radius: 20px;
-    background: #242424;
-    padding-top: 14px;
-    position: relative;
-   
-
-}
-
 ul,
 li {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
 }
-
 
 .is-hidden {
     display: none;
@@ -69,7 +66,7 @@ li {
         font-style: normal;
         font-weight: 400;
         line-height: 18px;
-        margin-right: auto;
+        
 }
 .start-target{
     color: #F4F4F4;
@@ -85,6 +82,9 @@ li {
     display: flex;
     align-items: center;
     gap: 2px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .yellow-star {
@@ -144,11 +144,21 @@ display:flex;
     gap: 20px;
     margin-top: 8px;
     margin-left: 20px;
+    margin-right: 20px;
    
 
 }
+.start-body,.start-burned,.start-target,.start-equipment,.start-popular{
+color: #F4F4F4;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
 
-.modal-rating{margin-left: 20px;}
+
 
 .rating_value  {
     padding-top: 8px;
@@ -168,6 +178,8 @@ display:flex;
 }
 .description{
 padding-right: 20px;
+padding-bottom: 40px;
+padding-left: 20px;
 }
 .description span {
     color: rgba(244, 244, 244, 0.60);
@@ -176,6 +188,7 @@ padding-right: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+    
    
 }
 
@@ -194,25 +207,27 @@ padding-right: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
-    margin-left: auto;
+    margin-left: 20px;
 
 }
 
 .add-favorite:hover,
-.add-favorite:active {
+.add-favorite:focus {
     background: #242424;
-    margin-left: 20px;
+    background-color: transparent;
     margin-right: 6px;
-    margin-bottom: 20px;
     color: #F4F4F4;
+    margin-left: 8px;
 }
 
 .add-favorite-svg:hover,
-.add-favorite-svg:active {
+.add-favorite-svg:focus {
     width: 18px;
     height: 18px;
-    stroke: #F4F4F4;
-    fill: transparent;
+    stroke: red;
+    fill: red;
+   
+
 }
 
 
@@ -227,6 +242,7 @@ padding-right: 20px;
     height: 18px;
     stroke: #242424;
     fill: transparent;
+    margin-left: 8px;
 }
 
 .give-rating {
@@ -266,66 +282,39 @@ padding-right: 20px;
 .modal-x-button:active{
     fill: #F4F4F4;
 }
-modal-content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-}
 
-.modal-image-container {
-    flex: 1;
-    max-width: 335px;
-    /* Adjust as needed */
-}
 
-.modal-text-container {
-    flex: 1;
-    margin-left: 20px;
-    /* Add spacing between the image and text */
-}
+
  @media screen and (min-width: 768px) {
     .container-modal {
         max-width: 704px;
-        padding: 32px;
+        border-radius: 20px;
+        background: #242424;
+        padding-top: 32px;
+        
     }
+.modal-describtion-container{
+ width: 704px;
+ margin-right: 20px;
 
-  .exercise{
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    
-  }
 
-        .exercise-list__img {
-            max-width: 270px;
-            margin-right: 32px;
+ display: flex;
+justify-content: space-between;
+}
+
+.exercise-list__img{
+    width: 270px;
+    margin-right: 32px;
     
-        }
-    
-    
-        .exercise-list__img {
-            margin-bottom: 64px;
-        }
 }
 
 .description {
     padding-top: 16px;
-    margin-left: 20px;
-    padding-bottom: 40px;
+    margin-right: 20px;
 }
-
-.start {
-    padding-top: 0px;
+.line {
+  width: 342px;
 }
-.modal-description-block-items {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin-top: 8px;
-    margin-left: 20px;
-
-
 }
 
 /** ======== DESKTOP ======== */

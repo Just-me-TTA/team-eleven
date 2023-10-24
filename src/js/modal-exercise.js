@@ -66,7 +66,7 @@ function createRatingStars(rating) {
 
     return ratingContainer;
 }
-const ratingStars = createRatingStars(rating);
+
 async function checkLocalStorageForId(id) {
   const response = await axios.get(`${BASE_URL}/exercises/${id}`);
     const exerciseData = response.data;
@@ -84,8 +84,10 @@ async function checkLocalStorageForId(id) {
   ref.modalPopularity.textContent = exerciseData.popularity;
   ref.modalBurnedCalories.textContent = `${exerciseData.burnedCalories}/3 min`;
   ref.modalDescriptionText.textContent = exerciseData.description;
-  ref.modalGif.src = exerciseData.gifUrl;
-}г
+    ref.modalGif.src = exerciseData.gifUrl;
+    ref.modalTitle.textContent = exerciseData.name;
+    
+}
 
 
 function closeExerciseModal() {
