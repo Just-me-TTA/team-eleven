@@ -73,7 +73,7 @@ img {
 
 }
 .quote-imeges {
-  background-image: url(../img/women-mobil.jpg);
+  background-image: url(./img/women-mobil.jpg);
   width: 335px;
   height: 242px;
   margin-bottom: 20px;
@@ -85,7 +85,7 @@ img {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(../img/women-mobil-2x.jpg);
+        background-image: url(./img/women-mobil-2x.jpg);
         background-size: 335px 242px;
 
       }
@@ -226,7 +226,9 @@ img {
     height: 24px;
   }
   .quote-imeges {
-    background-image: url(../img/women-tabl.jpg);
+
+    background-image: url(./img/women-tabl.jpg);
+
 
     width: 288px;
     height: 258px;
@@ -236,7 +238,7 @@ img {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(../img/women-tabl-2x.jpg);
+        background-image: url(./img/women-tabl-2x.jpg);
         background-size: 100% ;
 
       }
@@ -304,7 +306,9 @@ img {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(../img/women-desktop-2x.jpg);
+
+        background-image: url(./img/women-desktop-2x.jpg);
+
 
       }
     }
