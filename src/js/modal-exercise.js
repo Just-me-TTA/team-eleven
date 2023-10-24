@@ -22,9 +22,13 @@ const ref = {
     modalDescriptionText: document.querySelector('.modal-description-text'),
     modalGif: document.querySelector('.exercise-list__img'),
     modalTitle: document.querySelector('.exercise-list__title'),
+    removeButton: document.querySelector(".remove-button"),
+    giveRatingButton: document.querySelector(".give-rating"),
+    buttonText: document.querySelector(".button-text"),
+     ratingModal: document.getElementById('ratingModal'),
 };
 
-let favoriteObj = {};
+let favoritesData = [];
 let isModalOpen = false;
 
 const openButtons = document.querySelectorAll("[data-modal-open]");
@@ -93,18 +97,16 @@ async function checkLocalStorageForId(id) {
 function closeExerciseModal() {
     ref.modal.classList.remove("is-open"); 
 }
-/*
-ref.addGiveRatingModal.addEventListener("click", openGiveRatingModal);
+ref.addFavoriteButton.addEventListener("click", function() {
+  if (ref.addFavoriteButton.textContent === "Add to favorites") {
+    ref.addFavoriteButton.textContent = "Remove from favorites";
+  } else {
+    ref.addFavoriteButton.textContent = "Add to favorites";
+  }
+});
 
-function openGiveRatingModal() {
-    // Відкрити друге модальне вікно (giveRatingModal)
-    const giveRatingModal = document.getElementById("giveRatingModal");
-    giveRatingModal.classList.add("is-open");
 
-    // Закрийте поточне модальне вікно (якщо воно вже відкрите)
-    ref.modal.classList.remove("is-open");
+ref.giveRatingButton.addEventListener('click', function() {
+    ratingModal.classList.add('is-open'); // Відкрити другу модалку
+});
 
-    // Отримайте дані про обрану вправу та відобразіть їх у другому модальному вікні
-    const exerciseId = ref.modal.dataset.id;
-    checkLocalStorageForId(exerciseId);
-}*/
