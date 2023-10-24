@@ -107,8 +107,9 @@ li {
             39% 35%);
             box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
         
-
-
+}
+.yellow-star:hover {
+    transform: scale(1.4);
 }
 
 .half-filled-star {
@@ -117,6 +118,9 @@ li {
     background-color: hsla(40, 90%, 49%, 1);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+}
+.half-filled-star:hover {
+transform: scale(1.4);
 }
 
 .gray-star {
@@ -133,10 +137,12 @@ li {
             32% 57%,
             2% 35%,
             39% 35%);
-            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);}
+.gray-star:hover {
+        transform: scale(1.4);
+    }
 
 
-}
 .line {
     height: 2px;
     background-color: rgba(244, 244, 244, 0.20);
@@ -216,6 +222,7 @@ padding-left: 20px;
     font-weight: 400;
     line-height: 18px;
     margin-left: 20px;
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
 
 }
 
@@ -268,6 +275,7 @@ padding-left: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
 }
 
 .give-rating:hover,
@@ -297,7 +305,7 @@ padding-left: 20px;
     letter-spacing: -0.02em;
 
     background-color: #f4f4f4;
-    color: var(#242424);
+    color: #242424;
     transition: all var(--transition);
     width: 235px;
     height: 48px;
@@ -306,7 +314,7 @@ padding-left: 20px;
 .exercise-modal-button__remove-icon {
     width: 18px;
     height: 18px;
-    stroke: var(#242424);
+    stroke:#242424;
     fill: transparent;
 }
 
