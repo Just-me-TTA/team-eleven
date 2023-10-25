@@ -133,7 +133,7 @@ ref.addFavoriteButton.addEventListener("click", function() {
     ref.addFavoriteButton.textContent = "Remove from favorites";
   }
 
-  console.log(favoriteIdList);
+  //console.log(favoriteIdList);
 });
 function addToFavorites(exerciseId) {
   if (!favoriteIdList.includes(exerciseId)) {
