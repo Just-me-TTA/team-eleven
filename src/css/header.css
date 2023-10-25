@@ -122,7 +122,7 @@
   .header-nav-list-item {
     display: flex;
   }
-  header-nav-link {
+  .header-menu-link {
     display: inline-flex;
     padding: 6px 12px;
     justify-content: center;
