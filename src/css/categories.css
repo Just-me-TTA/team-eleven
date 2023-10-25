@@ -283,10 +283,14 @@
 
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width:1440px) {
     .categories {
         padding-right: 32px;
         padding-left: 32px;
+    }
+
+    .cont-categor {
+        /* display: flex; */
     }
 
     .btn-filter-and-title {
@@ -307,8 +311,9 @@
     }
 
     .container-for-images-and-btn {
-        margin-left: auto;
-        max-width: 900px;
+        display: flex;
+        /* margin-left: auto; */
+        /* max-width: 900px; */
     }
 
     .container-for-images {
@@ -321,6 +326,10 @@
     .container-for-images div {
         max-width: 290px;
         margin-bottom: 32px;
+    }
+
+    .word-of-the-day {
+        margin-right: 32px;
     }
 }
 

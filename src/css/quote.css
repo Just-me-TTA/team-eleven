@@ -5,12 +5,14 @@ img {
   border-radius: 20px;
   border: none;
 }
+
 .quote {
   background-color: #F4F4F4;
   width: 335px;
   margin: 0 auto;
 }
-.quote-block{
+
+.quote-block {
   width: 335px;
   height: 188px;
   background-color: #242424;
@@ -19,16 +21,19 @@ img {
   padding: 20px;
   display: block;
 }
+
 .quote-icon-runner {
   fill: #F4F4F4;
   width: 34px;
   height: 32px;
 }
+
 .quote-icon-quotes {
   width: 20px;
   height: 20px;
 
 }
+
 .quote-text {
   width: 243px;
   padding-left: 18px;
@@ -40,9 +45,11 @@ img {
   line-height: 1;
   height: 20px;
 }
+
 .quote-block-markup {
   display: flex;
 }
+
 .js-quote {
   height: 116px;
   font-family: Neue Montreal;
@@ -55,6 +62,7 @@ img {
   align-items: flex-end;
   padding-bottom: 0;
 }
+
 .js-quote-text {
   color: rgba(244, 244, 244, 0.60);
   width: 243px;
@@ -62,10 +70,12 @@ img {
   margin-bottom: 16px;
 
 }
+
 .js-quote-autor {
   color: #F4F4F4;
 
 }
+
 .quote-imeges {
   background-image: url(/img/women-mobil.jpg);
   width: 335px;
@@ -75,15 +85,16 @@ img {
   border-radius: 20px;
   border: none;
 }
-@media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-      .quote-imeges {
-        background-image: url(/img/women-mobil-2x.jpg);
-        background-size: 335px 242px;
 
-      }
-    }
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .quote-imeges {
+    background-image: url(/img/women-mobil-2x.jpg);
+    background-size: 335px 242px;
+
+  }
+}
 
 .quote-info-block {
   width: 335px;
@@ -94,6 +105,7 @@ img {
   padding: 20px;
   margin-bottom: 80px;
 }
+
 .quote-info-icon {
   width: 32px;
   height: 32px;
@@ -104,12 +116,14 @@ img {
   justify-content: center;
   align-items: center;
 }
+
 .icon-dumbbell {
   width: 20px;
   height: 20px;
   fill: #F4F4F4;
   justify-content: center;
 }
+
 .quote-info-title {
   color: #242424;
   font-family: Neue Montreal;
@@ -119,6 +133,7 @@ img {
   height: 20px;
   margin-bottom: 4px;
 }
+
 .quote-info-content {
   color: rgba(36, 36, 36, 0.60);
   font-family: Neue Montreal;
@@ -127,6 +142,7 @@ img {
   line-height: 1.2;
   padding-bottom: 16px;
 }
+
 .quote-content-text {
   overflow: hidden;
   color: #242424;
@@ -146,10 +162,11 @@ img {
 
 }
 
-@media screen  and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .container {
     width: 768px;
   }
+
   .quote {
     width: 768px;
     display: flex;
@@ -174,9 +191,11 @@ img {
     line-height: 1.33;
     height: 32px; */
   }
+
   .quote-icon-quotes {
     margin-left: auto;
   }
+
   .js-quote {
     padding: 0;
     margin-left: 50px;
@@ -185,11 +204,13 @@ img {
     /* padding-left: 90px;
     height: 131px; */
   }
+
   .js-quote-text {
     width: 270px;
     height: 89px;
     margin-bottom: 18px;
   }
+
   .js-quote-autor {
     height: 24px;
   }
@@ -203,15 +224,16 @@ img {
     height: 258px;
 
   }
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-      .quote-imeges {
-        background-image: url(/img/women-tabl-2x.jpg);
-        background-size: 100% ;
 
-      }
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    .quote-imeges {
+      background-image: url(/img/women-tabl-2x.jpg);
+      background-size: 100%;
+
     }
+  }
 
   .quote-info-block {
     width: 400px;
@@ -220,28 +242,33 @@ img {
     border-radius: 20px;
     margin-bottom: 100px;
     padding: 40px;
-      /* padding: 20px;
+    /* padding: 20px;
       background-color: #fff;
       border-radius: 20px;
       display: flex;
       margin-bottom: 80px; */
-    }
+  }
+
   .quote-info-icon {
     margin-right: 16px;
   }
+
   .quote-info-text {
     width: 270px;
     height: 169px;
   }
+
   .quote-info-title {
     height: 32px;
 
     margin-bottom: 6px;
-    }
-   .quote-info-content {
+  }
+
+  .quote-info-content {
     height: 18px;
     margin-bottom: 16px;
   }
+
   .quote-content-text {
     padding-top: 5px;
     width: 270px;
@@ -254,27 +281,33 @@ img {
   .container {
     width: 508px;
   }
+
   .quote {
     width: 508px;
     row-gap: 32px;
     display: block;
   }
+
   .quote-block {
     /* margin-right: 32px; */
     width: 444px;
     height: 230px;
     margin-bottom: 32px;
   }
+
   .quote-text {
     height: 32px;
   }
+
   .js-quote {
     width: 314px;
     height: 112px;
   }
+
   .js-quote-text {
     height: 70px;
   }
+
   .quote-imeges {
     background-image: url(/img/women-desktop.jpg);
     padding-right: 0;
@@ -282,25 +315,28 @@ img {
     height: 242px;
     margin-bottom: 32px;
   }
+
   @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-      .quote-imeges {
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    .quote-imeges {
 
-        background-image: url(/img/women-desktop-2x.jpg);
+      background-image: url(/img/women-desktop-2x.jpg);
 
 
-      }
     }
+  }
 
   .quote-info-block {
     width: 444px;
     height: 315px;
   }
+
   .quote-info-text {
     width: 314px;
     height: 235px;
   }
+
   .quote-info-content {
     height: 18px;
     padding: 0;
