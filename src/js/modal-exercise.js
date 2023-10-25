@@ -31,7 +31,7 @@ const ref = {
 let favoritesData = [];
 let isModalOpen = false;
 let exerciseId = "64f389465ae26083f39b18ae";
-
+const favoriteIdList = JSON.parse(localStorage.getItem('LS_FAVORITES_ID')) || [];
 const openModalButtons = document.querySelectorAll('.openModalBtn');
  ref.openModalBtn.addEventListener("click", () => openExerciseModal(exerciseId));
 ref.closeModalBtn.addEventListener("click", closeExerciseModal);
@@ -39,20 +39,20 @@ ref.closeModalBtn.addEventListener("click", closeExerciseModal);
 openModalButtons.forEach((button) => {
   button.addEventListener('click', async (event) => {
     const exerciseCard = event.target.closest('.js-workout-card');
-    const exerciseId = exerciseCard.getAttribute('data-id');
-    if (exerciseId) {
-      try {
-        //exerciseId
-        const response = await axios.get(`${BASE_URL}/exercises/${exerciseId}`)
-        if (response.status === 200) {
-          const exerciseData = response.data;
-         
-          updateModalWithExerciseData(exerciseData);
-        } else {
-          console.error('Помилка запиту до API');
+    if (exerciseCard) {
+      const exerciseId = exerciseCard.getAttribute('data-id');
+      if (exerciseId) {
+        try {
+          const response = await axios.get(`${BASE_URL}/exercises/${exerciseId}`);
+          if (response.status === 200) {
+            const exerciseData = response.data;
+            updateModalWithExerciseData(exerciseData);
+          } else {
+            console.error('Помилка запиту до API');
+          }
+        } catch (error) {
+          console.error('Помилка при взаємодії з API', error);
         }
-      } catch (error) {
-        console.error('Помилка при взаємодії з API', error);
       }
     }
   });
@@ -125,12 +125,35 @@ function closeExerciseModal() {
 }
 
 ref.addFavoriteButton.addEventListener("click", function() {
-  if (ref.addFavoriteButton.textContent === "Add to favorites") {
-    ref.addFavoriteButton.textContent = "Remove from favorites";
-  } else {
+  if (favoriteIdList.includes(exerciseId)) {
+    removeFromFavorites(exerciseId);
     ref.addFavoriteButton.textContent = "Add to favorites";
+  } else {
+    addToFavorites(exerciseId);
+    ref.addFavoriteButton.textContent = "Remove from favorites";
   }
+
+  //console.log(favoriteIdList);
 });
+function addToFavorites(exerciseId) {
+  if (!favoriteIdList.includes(exerciseId)) {
+    favoriteIdList.push(exerciseId);
+    updateLocalStorageFavorites(); // up localstorege
+  }
+}
+
+function removeFromFavorites(exerciseId) {
+  const index = favoriteIdList.indexOf(exerciseId);
+  if (index !== -1) {
+    favoriteIdList.splice(index, 1);
+    updateLocalStorageFavorites(); // up localStorage
+  }
+}
+
+function updateLocalStorageFavorites() {
+  const favoriteData = JSON.stringify(favoriteIdList);
+  localStorage.setItem('LS_FAVORITES_ID', favoriteData); // save localStorage
+}
 
 ref.giveRatingButton.addEventListener('click', function() {
     ref.modal.classList.remove('is-open');
