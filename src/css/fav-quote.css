@@ -1,0 +1,275 @@
+img {
+  width: 335px;
+  height: 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: none;
+}
+.quote {
+  background-color: #F4F4F4;
+  width: 335px;
+  margin: 0 auto;
+  margin-bottom: auto;
+}
+img {
+  width: 335px;
+  height: 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: none;
+}
+.quote {
+  background-color: #F4F4F4;
+  width: 335px;
+  margin: 0 auto;
+}
+.quote-block{
+  width: 335px;
+  height: 159px;
+  background-color: #242424;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: block;
+}
+.quote-icon-runner {
+  fill: #F4F4F4;
+  width: 34px;
+  height: 32px;
+}
+.quote-icon-quotes {
+  width: 20px;
+  height: 20px;
+
+}
+.quote-text {
+  width: 243px;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  color: #F4F4F4;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  height: 20px;
+}
+.quote-icon-quotes {
+  width: 20px;
+  height: 20px;
+
+}
+.quote-text {
+  width: 243px;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  color: #F4F4F4;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  height: 20px;
+}
+.quote-block-markup {
+  display: flex;
+}
+.js-quote {
+  width: 243px;
+  height: 93px;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  padding-left: 52px;
+  display: block;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0;
+}
+.js-quote-text {
+  color: rgba(244, 244, 244, 0.60);
+  width: 243px;
+  height: 93px;
+  margin-bottom: 16px;
+}
+.js-quote-autor {
+  display: none;
+}
+.quote-imeges {
+  display: none;
+}
+.quote-info-block {
+  width: 335px;
+  height: 119px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: block;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.quote-info-icon {
+  margin: 0;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+.icon-dumbbell {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  fill: #242424;
+
+}
+.quote-info-title {
+  color: #242424;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  padding-bottom: 6px;
+}
+.quote-info-content {
+  color: rgba(36, 36, 36, 0.60);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.quote-content-text {
+  display: none;
+}
+
+
+.quote-imeges-favorites {
+  background-image: url(/img/women-quote-imeges-favorites-mob.jpg);
+  width: 335px;
+  height: 119px;
+  margin-bottom: 64px;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: none;
+}
+@media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      .quote-imeges {
+        background-image: url(/img/women-quote-imeges-favorites-mob2x.jpg);
+        background-size: 335px 119px;
+
+      }
+    }
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+}
+@media screen  and (min-width: 768px){
+  .container {
+      width: 768px;
+  }
+  .quote {
+    width: 768px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .quote-block {
+
+    width: 704px;
+    height: 220px;
+    padding: 40px;
+    margin-bottom: 16px;
+
+  }
+
+  .quote-text {
+    height: 32px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+  .quote-icon-quotes {
+
+    margin-left: auto;
+  }
+  .js-quote {
+   width: 626px;
+   height: 102px;
+  }
+  .js-quote-text {
+    width: 574px;
+    height: 60px;
+    margin-bottom: 18px;
+  }
+  .js-quote-autor {
+    display: block;
+    color: #F4F4F4;
+
+  }
+  .quote-info-block {
+    width: 344px;
+    height: 141px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 64px;
+    margin-right: 16px;
+  }
+  .quote-info-title {
+    height: 32px;
+    padding-bottom: 6px;
+
+  }
+  .quote-imeges-favorites {
+    background-image: url(/img/women-quote-favorites-tab.jpg);
+    width: 344px;
+    height: 141px;
+    margin-bottom: 100px;
+
+  }
+  @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        .quote-imeges {
+          background-image: url(/img/women-quote-favorites-tab2x.jpg);
+          background-size: 344px 141px;
+
+        }
+      }
+
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 558px;
+  }
+  .quote {
+    width: 558px;
+  }
+  .quote-block {
+    width: 494px;
+    height: 230px;
+    padding: 40px;
+    margin-bottom: 16px;
+  }
+  .quote-info-block {
+    width: 239px;
+    height: 141px;
+  }
+  .quote-imeges-favorites {
+    background-image: url(/img/women-quote-favorites-des.jpg);
+    width: 239px;
+    height: 141px;
+    margin-bottom: 0;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        .quote-imeges {
+          background-image: url(/img/women-quote-favorites-des2x.jpg);
+          background-size: 239px 141px;
+
+        }
+      }
+
+
+}
