@@ -30,21 +30,51 @@ const ref = {
 
 let favoritesData = [];
 let isModalOpen = false;
+let exerciseId = "64f389465ae26083f39b18ae";
 
-const openButtons = document.querySelectorAll("[data-modal-open]");
-openButtons.forEach((openModalBtnItem) => {
-  openModalBtnItem.addEventListener("click", openExerciseModal);
-});
-
-ref.openModalBtn.addEventListener("click", openExerciseModal);
+const openModalButtons = document.querySelectorAll('.openModalBtn');
+ ref.openModalBtn.addEventListener("click", () => openExerciseModal(exerciseId));
 ref.closeModalBtn.addEventListener("click", closeExerciseModal);
 
-function openExerciseModal(evt) {
-    ref.modal.classList.add("is-open"); // Додайте клас is-open, щоб відкрити модальне вікно
+openModalButtons.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    const exerciseCard = event.target.closest('.js-workout-card');
+    const exerciseId = exerciseCard.getAttribute('data-id');
+    if (exerciseId) {
+      try {
+        //exerciseId
+        const response = await axios.get(`${BASE_URL}/exercises/${exerciseId}`)
+        if (response.status === 200) {
+          const exerciseData = response.data;
+         
+          updateModalWithExerciseData(exerciseData);
+        } else {
+          console.error('Помилка запиту до API');
+        }
+      } catch (error) {
+        console.error('Помилка при взаємодії з API', error);
+      }
+    }
+  });
+});
 
-    const exerciseId = evt.target.closest(".js-workout-card").dataset.id;
+function updateModalWithExerciseData(exerciseData) {
+  // Оновити модальне вікно з отриманими даними
+  const modal = document.getElementById('outerModal');
+  const modalTitle = modal.querySelector('.exercise-list__title');
+  const modalRatingValue = modal.querySelector('.modal-rating-value');
+
+  modalTitle.textContent = exerciseData.name;
+  modalRatingValue.textContent = exerciseData.rating;
+
+  modal.classList.add('is-open');
+}
+
+function openExerciseModal(exerciseId) {
+    ref.modal.classList.add("is-open");
     checkLocalStorageForId(exerciseId);
 }
+
 function createRatingStars(rating) {
     const ratingContainer = document.createElement('div');
     ratingContainer.classList.add('rating-container');
@@ -73,9 +103,7 @@ function createRatingStars(rating) {
 
 async function checkLocalStorageForId(id) {
   const response = await axios.get(`${BASE_URL}/exercises/${id}`);
-    const exerciseData = response.data;
-    
-     
+  const exerciseData = response.data;
 
   // Створення та вставка рейтингу
   const rating = parseFloat(exerciseData.rating);
@@ -90,13 +118,12 @@ async function checkLocalStorageForId(id) {
   ref.modalDescriptionText.textContent = exerciseData.description;
   ref.modalGif.src = exerciseData.gifUrl;
   ref.modalTitle.textContent = exerciseData.name;
-    
 }
-
 
 function closeExerciseModal() {
-    ref.modal.classList.remove("is-open"); 
+    ref.modal.classList.remove("is-open");
 }
+
 ref.addFavoriteButton.addEventListener("click", function() {
   if (ref.addFavoriteButton.textContent === "Add to favorites") {
     ref.addFavoriteButton.textContent = "Remove from favorites";
@@ -105,9 +132,7 @@ ref.addFavoriteButton.addEventListener("click", function() {
   }
 });
 
-
 ref.giveRatingButton.addEventListener('click', function() {
-
     ref.modal.classList.remove('is-open');
     ref.ratingModal.classList.add('is-open');
 });
