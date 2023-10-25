@@ -2,6 +2,7 @@
 .container-modal {
     max-width: 335px;
     border-radius: 20px;
+    height: auto;
     background: #242424;
     padding-top: 14px;
 
@@ -12,6 +13,9 @@
     display: none;
     opacity: 0;
     transition: opacity 0.3s;
+        position: fixed;
+
+
   
     
 }
@@ -22,6 +26,7 @@
     opacity: 1;
     z-index:105;
     background: rgba(0, 0, 0, 0.8);
+ 
 }
 
 
@@ -361,4 +366,5 @@ justify-content: space-between;
 @media screen and (min-width: 1280px) {
     .modal-exercise {
         max-width: 708px;
+        position: fixed;
     }}
