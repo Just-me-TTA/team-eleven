@@ -31,7 +31,6 @@
 
 .hero-span {
     color: #242424;
-    font-family: Neue Montreal;
     font-size: 40px;
     font-style: italic;
     font-weight: 400;
@@ -41,7 +40,6 @@
 
 .hero-text {
     color: #242424;
-    font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -68,7 +66,6 @@
 
 .hero-tags-item {
     color: #242424;
-    font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -104,7 +101,6 @@
     }
 
     .hero-title {
-        width: 593px;
         font-size: 74px;
         line-height: 74px;
         letter-spacing: -1.48px;
@@ -141,7 +137,6 @@
         font-size: 74px;
         line-height: 74px;
         letter-spacing: -1.48px;
-        margin-right: 450px;
     }
 
     .hero-span {
