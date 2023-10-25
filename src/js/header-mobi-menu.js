@@ -17,3 +17,12 @@ window.matchMedia('(min-width: 428px)').addEventListener('change', e => {
   headerMobileMenu.classList.remove('is-open');
   headerOpenMenuBtn.setAttribute('aria-expanded', false);
 });
+
+const menuLinks = document.querySelectorAll('.header-nav-link');
+
+menuLinks.forEach(menuLink => {
+  const linkPath = new URL(menuLink.href).pathname;
+  if (document.location.pathname === linkPath) {
+    menuLink.classList.add('home-nav');
+  }
+});
