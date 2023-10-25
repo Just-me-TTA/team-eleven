@@ -48,6 +48,7 @@
     font-size: 24px;
     color: rgba(244, 244, 244, 1);
     margin-top: 8px;
+    margin-bottom: 32px;
     line-height: 0.75;
     
 }
@@ -124,6 +125,7 @@ font-size: 12px;
     border-radius: 30px;
     padding: 12px 248px 12px 14px;
     color: rgba(244, 244, 244, 0.6);
+    margin-bottom: 16px;
 }
 
 .rating-form-input-comment {
@@ -135,6 +137,7 @@ font-size: 12px;
     border-radius: 15px;
     padding: 12px 194px 63px 14px;
     color: rgba(244, 244, 244, 0.6);
+   
 }
 
 .form-button {

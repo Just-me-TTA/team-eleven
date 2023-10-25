@@ -1,8 +1,7 @@
 // "use strict"
 
+import axios from 'axios';
 
-
-// const BASE_URL = 'https://your-energy.b.goit.study/api';
 
 
 const ratings = document.querySelectorAll('.rating');
@@ -104,19 +103,21 @@ function handleSubmit (evt) {
 evt.preventDefault();
 
 console.log(evt.currentTarget.elements)
- const { email, comment, rating} = evt.currentTarget.elements
+ const { email, comment,} = evt.currentTarget.elements
 
  const userData = {
     email:  email.value,
     comment: comment.value,
-    rating: rating.value,
+    // rating: rating.value,
  };
 
  serviceQuest(userData).then(() => alert("Success!")).catch(() => alert("Oops! Check the information"))
  
 }
 
+
 function serviceQuest(data) {
- return axios.post("https://your-energy.b.goit.study/api/${id}/rating", data);
-}
+    return axios.post(`https://your-energy.b.goit.study/api/exercises/${id}/rating`, data);
+   }
+
 
