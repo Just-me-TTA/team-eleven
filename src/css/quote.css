@@ -1,37 +1,3 @@
-@Fix2937, [24.10.2023 20:16]
-по одній крапочці
-
-Bad Habits, [24.10.2023 20:16]
-взагалі без крапочок тут
-
-Bad Habits, [24.10.2023 20:17]
-вроді як
-
-Bad Habits, [24.10.2023 20:17]
-така сборка
-
-@Fix2937, [25.10.2023 9:03]
-привіт. приймеш?
-
-Bad Habits, [25.10.2023 9:32]
-Ван момент
-
-Bad Habits, [25.10.2023 9:34]
-Чомусь в тебе конфлікти пішли останнім часом
-
-Bad Habits, [25.10.2023 9:42]
-скинь мені просто ссвій актуальний сss cсюди
-
-@Fix2937, [25.10.2023 9:43]
-Може й html&
-
-Bad Habits, [25.10.2023 9:43]
-а то зараз як наудаляю не того))
-
-Bad Habits, [25.10.2023 9:43]
-та ні, ти ж тільки стилі оновлюєш
-
-@Fix2937, [25.10.2023 9:43]
 img {
   width: 335px;
   height: 100%;
@@ -68,6 +34,7 @@ img {
   padding-left: 18px;
   margin-bottom: 6px;
   color: #F4F4F4;
+  font-family: Neue Montreal;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -78,6 +45,7 @@ img {
 }
 .js-quote {
   height: 116px;
+  font-family: Neue Montreal;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
@@ -144,6 +112,7 @@ img {
 }
 .quote-info-title {
   color: #242424;
+  font-family: Neue Montreal;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -152,6 +121,7 @@ img {
 }
 .quote-info-content {
   color: rgba(36, 36, 36, 0.60);
+  font-family: Neue Montreal;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
@@ -160,6 +130,7 @@ img {
 .quote-content-text {
   overflow: hidden;
   color: #242424;
+  font-family: Neue Montreal;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
