@@ -1,12 +1,8 @@
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
-//import 'slim-select/dist/slimselect.css';//
 import axios from 'axios';
-//import SimpleLightbox from "simplelightbox";//
-//import "simplelightbox/dist/simple-lightbox.min.css";//
 
-
-const API_URL = 'https://your-energy.b.goit.study/api/exercises';
+const BASE_URL = 'https://your-energy.b.goit.study/api';
 
 const ref = {
     openModalBtn: document.querySelector('.openModalBtn'),
@@ -14,52 +10,69 @@ const ref = {
     giveRatingButton: document.querySelector('.give-rating'),
     exerciseList: document.querySelector('.exercise'),
     modal: document.getElementById('outerModal'),
-    closeModalBtn: document.querySelector('.closeModalBtn'),
+    closeModalBtn: document.querySelector('.modal-x-button'),
+    ratingValue: document.querySelector('.modal-rating-value'),
+    modalExerciseName: document.querySelector('.exercise-list__title'),
+    modalRatingValue: document.querySelector('.modal-rating-value'),
+    modalTarget: document.querySelector('.start-target'),
+    modalBodyPart: document.querySelector('.start-body'),
+    modalEquipment: document.querySelector('.start-equipment'),
+    modalPopularity: document.querySelector('.start-popular'),
+    modalBurnedCalories: document.querySelector('.start-burned'),
+    modalDescriptionText: document.querySelector('.modal-description-text'),
+    modalGif: document.querySelector('.exercise-list__img'),
+    modalTitle: document.querySelector('.exercise-list__title'),
+    removeButton: document.querySelector(".remove-button"),
+    giveRatingButton: document.querySelector(".give-rating"),
+    buttonText: document.querySelector(".button-text"),
+     ratingModal: document.getElementById('ratingModal'),
 };
 
-const { addFavoriteButton, giveRatingButton, openModalBtn, exerciseList, modal, closeModalBtn } = ref;
+let favoritesData = [];
+let isModalOpen = false;
+let exerciseId = "64f389465ae26083f39b18ae";
+const favoriteIdList = JSON.parse(localStorage.getItem('LS_FAVORITES_ID')) || [];
+const openModalButtons = document.querySelectorAll('.openModalBtn');
+ ref.openModalBtn.addEventListener("click", () => openExerciseModal(exerciseId));
+ref.closeModalBtn.addEventListener("click", closeExerciseModal);
 
-function openExerciseModal() {
-    const exerciseID = '64f389465ae26083f39b17a5'; // ID вправи
-    fetchExerciseData(exerciseID)
-        .then(data => {
-            const exerciseMarkup = createExerciseMarkup(data);
-            exerciseList.innerHTML = exerciseMarkup;
-        });
-
-    modal.style.display = 'block';
-    modal.addEventListener('click', closeExerciseModal);
-    closeModalBtn.addEventListener('click', closeExerciseModal);
-    window.addEventListener('keydown', handleEscKey);
-}
-
-function closeExerciseModal() {
-    modal.style.display = 'none';
-
-    // Зняття обробників подій при закритті
-    modal.removeEventListener('click', closeExerciseModal);
-    closeModalBtn.removeEventListener('click', closeExerciseModal);
-    window.removeEventListener('keydown', handleEscKey);
-}
-
-// Функція для закриття модального вікна при натисканні клавіші ESC
-function handleEscKey(event) {
-    if (event.key === 'Escape') {
-        closeExerciseModal();
+openModalButtons.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    const exerciseCard = event.target.closest('.js-workout-card');
+    if (exerciseCard) {
+      const exerciseId = exerciseCard.getAttribute('data-id');
+      if (exerciseId) {
+        try {
+          const response = await axios.get(`${BASE_URL}/exercises/${exerciseId}`);
+          if (response.status === 200) {
+            const exerciseData = response.data;
+            updateModalWithExerciseData(exerciseData);
+          } else {
+            console.error('Помилка запиту до API');
+          }
+        } catch (error) {
+          console.error('Помилка при взаємодії з API', error);
+        }
+      }
     }
+  });
+});
+
+function updateModalWithExerciseData(exerciseData) {
+  // Оновити модальне вікно з отриманими даними
+  const modal = document.getElementById('outerModal');
+  const modalTitle = modal.querySelector('.exercise-list__title');
+  const modalRatingValue = modal.querySelector('.modal-rating-value');
+
+  modalTitle.textContent = exerciseData.name;
+  modalRatingValue.textContent = exerciseData.rating;
+
+  modal.classList.add('is-open');
 }
 
-// Додавання обробника події для кнопки "Відкрити модальне вікно"
-openModalBtn.addEventListener('click', openExerciseModal);
-
-async function fetchExerciseData(exerciseID) {
-    try {
-        const response = await axios.get(`${API_URL}/${exerciseID}`);
-        return response.data;
-    } catch (error) {
-        console.error('Помилка запиту до API:', error);
-        return null;
-    }
+function openExerciseModal(exerciseId) {
+    ref.modal.classList.add("is-open");
+    checkLocalStorageForId(exerciseId);
 }
 
 function createRatingStars(rating) {
@@ -88,44 +101,61 @@ function createRatingStars(rating) {
     return ratingContainer;
 }
 
-function createExerciseMarkup(data) {
-    if (data) {
-        const {
-            bodyPart,
-            _id,
-            equipment,
-            name,
-            target,
-            description,
-            rating,
-            burnedCalories,
-            time,
-            popularity,
-            gifUrl,
-        } = data;
-        
-        const ratingStars = createRatingStars(rating);
+async function checkLocalStorageForId(id) {
+  const response = await axios.get(`${BASE_URL}/exercises/${id}`);
+  const exerciseData = response.data;
 
-        return `<section class="modal-exercise container-wide">
-            <div class="exercise-wrap">
-                <img class="exercise-list__img" src="${gifUrl}" alt="foto" loading="lazy" />
-            </div>
-            <div class="exercise-details">
-                <h2 class="exercise-list__title">${name}</h2>
-              <div class="rating_value"><span> ${rating}</span> ${ratingStars.outerHTML}</div>
-                <div class="line"></div>
-                <div class="start">
-                    <ul class="start-body-rate">
-                        <li class="start-body">target: <span>${target}</span></li>
-                        <li class="start-body">bodyPart: <span>${bodyPart}</span></li>
-                        <li class="start-body">equipment: <span>${equipment}</span></li>
-                        <li class="start-body">popularity:<span>${popularity}</span></li>
-                    </ul>
-                    <li class="start-calories">burnedCalories:<span>${burnedCalories}</span></li>
-                </div>
-                <div class="line"></div>
-                <p class="description">description:${description}</p>
-            </div>
-        </section>`;
-    }
+  // Створення та вставка рейтингу
+  const rating = parseFloat(exerciseData.rating);
+  const ratingStars = createRatingStars(rating);
+  ref.modalRatingValue.innerHTML = ''; // Очистити попередній рейтинг
+  ref.modalRatingValue.appendChild(ratingStars); // Додати новий рейтинг
+  ref.modalTarget.textContent = exerciseData.target;
+  ref.modalBodyPart.textContent = exerciseData.bodyPart;
+  ref.modalEquipment.textContent = exerciseData.equipment;
+  ref.modalPopularity.textContent = exerciseData.popularity;
+  ref.modalBurnedCalories.textContent = `${exerciseData.burnedCalories}/3 min`;
+  ref.modalDescriptionText.textContent = exerciseData.description;
+  ref.modalGif.src = exerciseData.gifUrl;
+  ref.modalTitle.textContent = exerciseData.name;
 }
+
+function closeExerciseModal() {
+    ref.modal.classList.remove("is-open");
+}
+
+ref.addFavoriteButton.addEventListener("click", function() {
+  if (favoriteIdList.includes(exerciseId)) {
+    removeFromFavorites(exerciseId);
+    ref.addFavoriteButton.textContent = "Add to favorites";
+  } else {
+    addToFavorites(exerciseId);
+    ref.addFavoriteButton.textContent = "Remove from favorites";
+  }
+
+  //console.log(favoriteIdList);
+});
+function addToFavorites(exerciseId) {
+  if (!favoriteIdList.includes(exerciseId)) {
+    favoriteIdList.push(exerciseId);
+    updateLocalStorageFavorites(); // up localstorege
+  }
+}
+
+function removeFromFavorites(exerciseId) {
+  const index = favoriteIdList.indexOf(exerciseId);
+  if (index !== -1) {
+    favoriteIdList.splice(index, 1);
+    updateLocalStorageFavorites(); // up localStorage
+  }
+}
+
+function updateLocalStorageFavorites() {
+  const favoriteData = JSON.stringify(favoriteIdList);
+  localStorage.setItem('LS_FAVORITES_ID', favoriteData); // save localStorage
+}
+
+ref.giveRatingButton.addEventListener('click', function() {
+    ref.modal.classList.remove('is-open');
+    ref.ratingModal.classList.add('is-open');
+});

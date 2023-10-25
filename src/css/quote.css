@@ -1,37 +1,59 @@
-
+img {
+  width: 335px;
+  height: 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: none;
+}
 .quote {
   background-color: #F4F4F4;
-  width: 375px;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 335px;
   margin: 0 auto;
 }
-
-
 .quote-block{
   width: 335px;
   height: 188px;
   background-color: #242424;
   border-radius: 20px;
   margin-bottom: 20px;
+  padding: 20px;
   display: block;
 }
+.quote-icon-runner {
+  fill: #F4F4F4;
+  width: 34px;
+  height: 32px;
+}
+.quote-icon-quotes {
+  width: 20px;
+  height: 20px;
+
+}
+.quote-text {
+  width: 243px;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  color: #F4F4F4;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  height: 20px;
+}
 .quote-block-markup {
-  padding-top: 20px;
   display: flex;
 }
-
 .js-quote {
+  height: 116px;
+  font-family: Neue Montreal;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
-  padding-left: 72px;
-  padding-top: -10px;
-  height: 136px;
-
+  padding-left: 52px;
   display: block;
   justify-content: space-between;
   align-items: flex-end;
+  padding-bottom: 0;
 }
 .js-quote-text {
   color: rgba(244, 244, 244, 0.60);
@@ -39,53 +61,13 @@
   height: 88px;
   margin-bottom: 16px;
 
-
 }
 .js-quote-autor {
   color: #F4F4F4;
-  /* display: flex;
-  align-items: flex-end; */
 
 }
-
-/* .quote-icon-runner {
-  flex-wrap: nowrap;
-  margin-top: 0;
-
-} */
-/* .quote-content {
-
-
-  display: flex;
-} */
-.quote-icon-runner {
-  fill: #F4F4F4;
-  height: 32px;
-  margin-left: 20px;
-}
-
-.quote-icon-quotes {
-  height: 20px;
-  /* width: 20px;
-  height: 20px;
-  padding-top: 20px;
-  padding-right: 20px; */
-
-}
-.quote-text {
-  width: 243px;
-
-  padding-left: 18px;
-  /* margin-bottom: 6px; */
-  color: #F4F4F4;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1;
-}
-
-
 .quote-imeges {
-  background-image: url(../img/women-mobil.jpg);
+  background-image: url(/img/women-mobil.jpg);
   width: 335px;
   height: 242px;
   margin-bottom: 20px;
@@ -93,20 +75,15 @@
   border-radius: 20px;
   border: none;
 }
-/* @media (min-device-pixel-ratio: 2),
+@media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(../img/women-mobil-2x.jpg);
+        background-image: url(/img/women-mobil-2x.jpg);
+        background-size: 335px 242px;
+
       }
-    } */
-/* img {
-  width: 335px;
-  height: 100%;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  border: none;
-} */
+    }
 
 .quote-info-block {
   width: 335px;
@@ -114,23 +91,18 @@
   background-color: #fff;
   border-radius: 20px;
   display: flex;
+  padding: 20px;
   margin-bottom: 80px;
 }
-
 .quote-info-icon {
-  width: 100%;
+  width: 32px;
   height: 32px;
   background-color: #242424;
   border-radius: 50%;
   display: flex;
-  /* justify-content: center; */
-  margin-top: 20px;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
+  margin-right: 18px;
   justify-content: center;
-
-
+  align-items: center;
 }
 .icon-dumbbell {
   width: 20px;
@@ -139,41 +111,32 @@
   justify-content: center;
 }
 .quote-info-title {
-  margin: 0;
   color: #242424;
+  font-family: Neue Montreal;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
-  padding-bottom: 4px;
-
-}
-.quote-info-text {
-  padding-top: 20px;
-  padding-left: 18px;
-
+  height: 20px;
+  margin-bottom: 4px;
 }
 .quote-info-content {
   color: rgba(36, 36, 36, 0.60);
+  font-family: Neue Montreal;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
-  margin: 0;
   padding-bottom: 16px;
 }
-
 .quote-content-text {
   overflow: hidden;
   color: #242424;
+  font-family: Neue Montreal;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
   margin: 0;
-  /* margin-bottom: 20px; */
-  min-width: 245px;
+  width: 245px;
   height: 105px;
-  padding-right: 20px;
-
-
 }
 
 @media screen and (min-width: 375px) {
@@ -191,184 +154,166 @@
     width: 768px;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0 32px 0 32px;
+    column-gap: 16px;
+    row-gap: 32px;
   }
 
   .quote-block {
-    margin-right: 16px;
+    margin: 0;
+    padding: 40px;
     width: 400px;
     height: 249px;
-    margin-bottom: 32px;
-
-  }
-  .quote-block-markup {
-    padding: 0;
-    padding-right: 0;
-
-
-  }
-  .quote-icon-runner {
-    margin-top: 40px;
-    margin-left: 40px;
-    /* padding-top: 40px;
-    padding-left: 40px; */
-  }
-  .quote-icon-quotes {
-    margin-top: 40px;
-    margin-right: 40px;
-    justify-content: flex-end;
-    margin-left: 43px;
-    /* width: 24px;
-    height: 24px; */
-    /* padding-top: 40px;
-    padding-right: 40px; */
 
   }
 
   .quote-text {
-    /* width: 172px;
+    padding-left: 16px;
+    /* margin-top: 40px;
+    font-size: 24px;
+    line-height: 1.33;
     height: 32px; */
-    margin-top: 40px;
-
-
-    font-size: 24px;
-    line-height: 1.33;
-
-    /* padding-left: 16px;
-    font-size: 24px;
-    line-height: 1.33;
-    padding-top: 20px; */
   }
-  .quote-imeges {
-    background-image: url(../img/women-tabl.jpg);
-    padding-right: 0;
-    width: 288px;
-
+  .quote-icon-quotes {
+    margin-left: auto;
   }
-  /* @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-      .quote-imeges {
-        background-image: url(../img/women-tabl-2x.jpg);
-      }
-    } */
-  /* img {
-    width: 288px;
-    margin-left: 0;
-
-  } */
   .js-quote {
-    padding-left: 90px;
+    padding: 0;
+    margin-left: 50px;
+    width: 270px;
+    height: 131px;
+    /* padding-left: 90px;
+    height: 131px; */
   }
   .js-quote-text {
     width: 270px;
     height: 89px;
     margin-bottom: 18px;
+  }
+  .js-quote-autor {
+    height: 24px;
+  }
+
+  .quote-imeges {
+    margin: 0;
+    background-image: url(/img/women-tabl.jpg);
 
 
+    width: 288px;
+    height: 258px;
 
   }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      .quote-imeges {
+        background-image: url(/img/women-tabl-2x.jpg);
+        background-size: 100% ;
+
+      }
+    }
+
+  .quote-info-block {
+    width: 400px;
+    height: 249px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    padding: 40px;
+      /* padding: 20px;
+      background-color: #fff;
+      border-radius: 20px;
+      display: flex;
+      margin-bottom: 80px; */
+    }
+  .quote-info-icon {
+    margin-right: 16px;
+  }
+  .quote-info-text {
+    width: 270px;
+    height: 169px;
+  }
+  .quote-info-title {
+    height: 32px;
+
+    margin-bottom: 6px;
+    }
+   .quote-info-content {
+    height: 18px;
+    margin-bottom: 16px;
+  }
+  .quote-content-text {
+    padding-top: 5px;
+    width: 270px;
+    height: 97px;
+  }
+
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1440pxpx;
+    width: 508px;
   }
   .quote {
-    width: 1440pxpx;
+    width: 508px;
     row-gap: 32px;
     display: block;
-    /* padding-left: 32px;
-    padding-right: 32px; */
   }
   .quote-block {
-    margin-right: 32px;
+    /* margin-right: 32px; */
     width: 444px;
     height: 230px;
     margin-bottom: 32px;
   }
-  .quote-block-markup {
-
-  }
-  .quote-icon-quotes {
-    /* padding-left: 118px; */
-    margin-left: 67px;
-
-  }
   .quote-text {
-    padding-left: 16px;
+    height: 32px;
+  }
+  .js-quote {
+    width: 314px;
+    height: 112px;
+  }
+  .js-quote-text {
+    height: 70px;
   }
   .quote-imeges {
-    background-image: url(../img/women-desktop.jpg);
+    background-image: url(/img/women-desktop.jpg);
     padding-right: 0;
     width: 444px;
     height: 242px;
     margin-bottom: 32px;
   }
-  /* @media (min-device-pixel-ratio: 2),
+  @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(./images/women-desktop-2x.jpg);
-      }
-    } */
-  /* img {
-    width: 444px;
-    height: 242px;
-    margin-left: 0;
 
-  } */
+        background-image: url(/img/women-desktop-2x.jpg);
+
+
+      }
+    }
+
   .quote-info-block {
     width: 444px;
     height: 315px;
-    background-color: #fff;
-    border-radius: 20px;
-    display: flex;
-    margin-bottom: 80px;
-  }
-  .quote-info-icon {
-    margin-top: 40px;
-    margin-left: 40px;
-    width: 32px;
-    ;
-
-
-
-
-  }
-  .quote-info-title {
-    color: #242424;
-    font-size: 24px;
-
-    line-height: 1.33;
-    padding-bottom: 6px;
-
   }
   .quote-info-text {
-
-    padding: 0;
-    margin-top: 40px;
-    margin-left: 16px;
-    /* padding-top: 40px; */
-
-
+    width: 314px;
+    height: 235px;
   }
+  .quote-info-content {
+    height: 18px;
+    padding: 0;
+  }
+
   .quote-content-text {
     width: 314px;
     height: 163px;
-
     color: #242424;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.2;
-
-    /* margin-bottom: 40px; */
     min-width: 314px;
     height: 163px;
-    padding: 0;
-
   }
-
-
 }

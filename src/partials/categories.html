@@ -1,12 +1,60 @@
 <section class="categories">
   <div class="cont-categor">
-    <h2 class="title-exercise">Exercises</h2>
+    <div class="btn-filter-and-title">
+      <h2 class="title-exercise">Exercises</h2>
+      <ul class="list-categories">
+        <li class="item">
+          <button
+            id="bodyPartsFilterButton"
+            data-cgid="Body parts"
+            class="btn-categories current"
+          >
+            Body parts
+          </button>
+        </li>
+        <li class="item">
+          <button data-cgid="Muscles" class="btn-categories">Muscles</button>
+        </li>
+        <li class="item">
+          <button data-cgid="Equipment" class="btn-categories">
+            Equipment
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-for-images-and-btn">
+      <div class="container-for-images js-container-gallery-item"></div>
+      <ul class="btn-number-page">
+        <li>
+          <button class="btn-number current-page" data-numpage="1">1</button>
+        </li>
+        <li><button class="btn-number" data-numpage="2">2</button></li>
+        <li><button class="btn-number" data-numpage="3">3</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Exercises -->
+  <div class="exercise-for-card-category hiden">
+    <h2 class="title-exercise">Exercises/<span id="category-descr"></span></h2>
+    <div class="input-search">
+      <input
+        class="search-input"
+        type="text"
+        id="searchInput"
+        placeholder="Search..."
+      />
+      <!-- Search button -->
+      <button class="search-button">Search</button>
+    </div>
+
     <ul class="list-categories">
       <li class="item">
         <button
           id="bodyPartsFilterButton"
           data-cgid="Body parts"
-          class="btn-categories"
+          class="btn-categories current"
         >
           Body parts
         </button>
@@ -18,11 +66,15 @@
         <button data-cgid="Equipment" class="btn-categories">Equipment</button>
       </li>
     </ul>
+    <div class="exercise-card">
+      <ul class="exercise-list"></ul>
+    </div>
+    <ul class="btn-number-page">
+      <li>
+        <button class="btn-number current-page" data-numpage="1">1</button>
+      </li>
+      <li><button class="btn-number" data-numpage="2">2</button></li>
+      <li><button class="btn-number" data-numpage="3">3</button></li>
+    </ul>
   </div>
-  <div class="container-for-images js-container-for-images"></div>
-  <ul class="btn-number-page">
-    <li><button class="btn-number" data-numpage="1">1</button></li>
-    <li><button class="btn-number" data-numpage="2">2</button></li>
-    <li><button class="btn-number" data-numpage="3">3</button></li>
-  </ul>
 </section>
