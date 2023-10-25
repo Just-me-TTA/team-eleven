@@ -1,8 +1,10 @@
 // "use strict"
 
-console.log("hello world")
+import axios from 'axios';
 
-const ratings = document.querySelectorAll(".rating");
+
+
+const ratings = document.querySelectorAll('.rating');
 
 if (ratings.length > 0) {
     initRatings();
@@ -10,7 +12,6 @@ if (ratings.length > 0) {
 
 function initRatings() {
     let ratingActive, ratingValue;
-
     for (let index = 0; index < ratings.length; index++) {
         const rating = ratings[index];
         initRating(rating);
@@ -25,7 +26,6 @@ function initRatings() {
 
         if (rating.classList.contains('rating_set')) {
             setRating(rating);
-
         }
     }
 
@@ -42,17 +42,19 @@ function initRatings() {
         const RatingActiveWidth = index / 0.05;
         ratingActive.style.width = `${RatingActiveWidth}%`;
     }
+
 // showing grade
     function setRating(rating) {
-const ratingItems = rating.querySelectorAll(".js-rating");
+const ratingItems = rating.querySelectorAll(".rating__item");
 
 for (let index = 0; index < ratingItems.length; index ++) {
-    const ratingItem = array[index];
+    const ratingItem = ratingItems[index];
 
     ratingItem.addEventListener("mouseenter", function (e) {
         initRatingVars(rating);
         setRatingActiveWidth(ratingItem.value);
     });
+
     ratingItem.addEventListener("mouseleave", function(e){
         setRatingActiveWidth();
     });
@@ -73,3 +75,49 @@ function closeRatingModal() {
     const ratingModal = document.getElementById('ratingModal');
     ratingModal.classList.remove('is-open');
 }
+
+// close btn
+
+const ratingModal = document.getElementById('ratingModal');
+const closeModalInputBtn = document.querySelector(".close-modal-btn")
+
+closeModalInputBtn.addEventListener("click", closeModalInput);
+
+
+function closeModalInput() {
+    ratingModal.classList.remove('is-open');
+}
+
+
+// feedback form
+
+
+
+const refs = {
+form: document.querySelector('.js-form'),
+};
+
+refs.form.addEventListener('submit', handleSubmit);
+
+function handleSubmit (evt) {
+evt.preventDefault();
+
+console.log(evt.currentTarget.elements)
+ const { email, comment,} = evt.currentTarget.elements
+
+ const userData = {
+    email:  email.value,
+    comment: comment.value,
+    // rating: rating.value,
+ };
+
+ serviceQuest(userData).then(() => alert("Success!")).catch(() => alert("Oops! Check the information"))
+ 
+}
+
+
+function serviceQuest(data) {
+    return axios.post(`https://your-energy.b.goit.study/api/exercises/${id}/rating`, data);
+   }
+
+

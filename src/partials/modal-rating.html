@@ -1,23 +1,29 @@
 <div id="ratingModal" class="modal">  
 <div class="container">
-<button class="close-modal-btn" onclick="closeRatingModal()" type="button"><svg class="button_icon" width="18"
+<button class="close-modal-btn" onclick="closeRatingModal()" type="button">
+  
+  <svg class="button_icon" width="18"
     height="18">
     <use href="./img/javascript.svg#icon-close-black-18dp-2-1" />
-  </svg></button>
-  <p class="rating-text">Rating</p>
-  <div class="rating js-rating">
-    <div class="rating__value">0.0</div>
-    <div class="rating__body">
-      <div class="rating__active"></div>
-      <div class="rating__items">
-        <input type="radio" class="rating__item" value="1" name="rating" />
-        <input type="radio" class="rating__item" value="2" name="rating" />
-        <input type="radio" class="rating__item" value="3" name="rating" />
-        <input type="radio" class="rating__item" value="4" name="rating" />
-        <input type="radio" class="rating__item" value="5" name="rating" />
-      </div>
+  </svg> 
+</button>
+<p class="rating-text">Rating</p>
+<div class="form-js">
+  <form class="js-form" >
+<div class="rating rating_set">
+  <div class="rating__body">
+    <div class="rating__active"> </div>
+  
+    <div class="rating__items">
+      <input type="radio" class="rating__item" value="1" name="rating" />
+      <input type="radio" class="rating__item" value="2" name="rating" />
+      <input type="radio" class="rating__item" value="3" name="rating" />
+      <input type="radio" class="rating__item" value="4" name="rating" />
+      <input type="radio" class="rating__item" value="5" name="rating" />
     </div>
   </div>
+  <div class="rating__value" name="value">0.0</div>
+</div>
 
   <form class="rating-form">
     <label class="rating-form-label">
@@ -40,5 +46,7 @@
 
     <button class="form-button" type="submit">Send</button>
   </form>
+</form>
+</div>
 </div>
 </div>
