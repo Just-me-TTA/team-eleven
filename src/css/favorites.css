@@ -1,0 +1,33 @@
+@import url('./reset.css');
+@import url('./header.css');
+@import url('./fav-quote.css');
+@import url('./favorites-block.css');
+@import url('./scrollup.css');
+
+
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+    font-family: 'Neue Montreal', sans-serif;
+    src: url('../fonts/NeueMontreal-Regular.woff2') format('woff2'),
+        url('../fonts/NeueMontreal-Regular.woff') format('woff'),
+        url('../fonts/NeueMontreal-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Neue Montreal', sans-serif;
+    src: url('../fonts/NeueMontreal-Italic.woff2') format('woff2'),
+        url('../fonts/NeueMontreal-Italic.woff') format('woff'),
+        url('../fonts/NeueMontreal-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
