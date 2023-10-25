@@ -139,10 +139,24 @@ function handleResponseExercise(data) {
   }) => {
     return `<li class = "exercise-item">
       <div class="rating-start-exercise">
+        <div class="rating-start-exercise-wrap">
         <p class="workout">Workout</p>
         <p class="rating-exercise-card">${rating}</p>
-        <button class="start-exercise">Start</button>
-        <h2 class="title-exercise">${name}</h2>
+        <svg class="icon-star-exercises" width="18" height="18" fill="rgba(238, 161, 12, 1)">
+          <use href="/img/iconfull.svg#icon-star"></use>
+        </svg>
+        <button type="button"  data-modal-open class="start-exercise openModalBtn">Start
+          <svg class="icon-right-arrow" width="18" height="18" stroke="black">
+            <use href="/img/iconfull.svg#icon-right-arrow"></use>
+          </svg>
+        </button>
+        </div>
+        <div class = "title-exercise-wrap">
+            <svg class="icon-title-exercises" width="24" height="24" stroke="black">
+            <use href="/img/iconfull.svg#icon-run-men"></use>
+          </svg>
+          <h2 class="title-exercise">${name}</h2>
+        </div>
         <div class="calories-target">
           <p class="burned-calories">BurnedCalories: ${burnedCalories}/<span class="time-exercise">${time}</span></p>
           <p class="part-exercise">Bodypart: ${bodypart}</p>
@@ -154,8 +168,8 @@ function handleResponseExercise(data) {
   });
   const exerciseList = document.querySelector('.exercise-list');
   exerciseList.innerHTML = resultsExerciseHtml;
-
 }
+
 
 document.addEventListener("DOMContentLoaded", function () { 
   let loadCategoryResult = loadCategories();
