@@ -13,9 +13,9 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/team-eleven/assets/index-eaed4c7d.js"></script>
+    <script type="module" crossorigin src="/team-eleven/assets/index-8f952592.js"></script>
     <link rel="modulepreload" crossorigin href="/team-eleven/assets/quote-1d3dab0f.js">
-    <link rel="stylesheet" href="/team-eleven/assets/index-880f9724.css">
+    <link rel="stylesheet" href="/team-eleven/assets/index-b4c784e5.css">
   </head>
   <body>
     <header class="header">
@@ -238,14 +238,56 @@
     </div>
 
     <div class="container-for-images-and-btn">
-      <div class="container-for-images js-container-gallery-item"></div>
-      <ul class="btn-number-page">
-        <li>
-          <button class="btn-number current-page" data-numpage="1">1</button>
-        </li>
-        <li><button class="btn-number" data-numpage="2">2</button></li>
-        <li><button class="btn-number" data-numpage="3">3</button></li>
-      </ul>
+      <div class="word-of-the-day"><div class="quote">
+  <div class="quote-block">
+    <div class="quote-block-markup">
+      <svg class="quote-icon-runner" width="34" heigt="32">
+        <use href="/team-eleven/assets/icons-43770a5c.svg#icon-runner"></use>
+      </svg>
+      <h3 class="quote-text">Quote of the day</h3>
+      <svg class="quote-icon-quotes" width="20" heigt="20">
+        <use href="/team-eleven/assets/icons-43770a5c.svg#icon-quotes"></use>
+      </svg>
+    </div>
+    <div class="js-quote"></div>
+  </div>
+
+  <div class="quote-imeges"></div>
+
+  <div class="quote-info-block">
+    <div class="quote-info-icon">
+      <svg class="icon-dumbbell" width="20" heigt="20">
+        <use href="/team-eleven/assets/icons-43770a5c.svg#icon-dumbbell"></use>
+      </svg>
+    </div>
+    <div class="quote-info-text">
+      <h3 class="quote-info-title">110 min</h3>
+      <p class="quote-info-content">Daily norm of sports</p>
+      <p class="quote-content-text">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </p>
+    </div>
+  </div>
+
+  <div class="quote-imeges-favorites"></div>
+</div>
+</div>
+      <div class="container-style-img-and-btn">
+        <div class="container-for-images js-container-gallery-item"></div>
+        <ul class="btn-number-page">
+          <li>
+            <button class="btn-number current-page" data-numpage="1">1</button>
+          </li>
+          <li><button class="btn-number" data-numpage="2">2</button></li>
+          <li><button class="btn-number" data-numpage="3">3</button></li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -298,7 +340,7 @@
   <li class="js-workout-card" data-id=""></li>
   </ul>-->
 
-    <button class="openModalBtn" data-modal-open>Start</button>
+<button class="openModalBtn" data-modal-open>Start</button>
 <div class="modal is-hidden" id="outerModal">
   <div class="modal-content container-modal">
     <button class="modal-x-button" id="closeModalBtn" type="button">
@@ -307,7 +349,7 @@
       </svg>
     </button>
     <div class="modal-describtion-container">
-        <img class="exercise-list__img" src="" alt="exercise example" />
+      <img class="exercise-list__img" src="" alt="exercise example" />
       <div class="modal-text-container">
         <h3 class="exercise-list__title"></h3>
         <div class="modal-rating">
@@ -338,37 +380,40 @@
               <h4 class="title-modal">Burned Calories</h4>
               <p class="start-burned"></p>
             </li>
-
           </ul>
           <p class="line"></p>
           <p class="description">
-            <span class="modal-description-text">
-              text-text-text
-            </span>
+            <span class="modal-description-text"> text-text-text </span>
           </p>
+        </div>
       </div>
-      </div>
-      </div>
-    <button type="button" class="add-favorite is-hidden">Add to favorites<span>
+    </div>
+    <button type="button" class="add-favorite is-hidden">
+      Add to favorites<span>
         <svg class="add-favorite-svg">
           <use href="/team-eleven/assets/javascript-55be6e3b.svg#icon-heart"></use>
         </svg>
       </span>
     </button>
-  <button type="button" class="give-rating" id="openRatingModalBtn">Give Rating</button>
-      <div class="exercise-modal-button-card_remove is-hidden"> <button type="button" class="exercise-modal-button__remove">
-          Remove from favorites
-          <span>
-            <svg class="exercise-modal-button__remove-icon">
-              <use href="/team-eleven/assets/javascript-55be6e3b.svg#icon-trash" width="18" height="18"></use>
-            </svg>
-          </span>
-        </button>
-        </div>
-
+    <button type="button" class="give-rating" id="openRatingModalBtn">
+      Give Rating
+    </button>
+    <div class="exercise-modal-button-card_remove is-hidden">
+      <button type="button" class="exercise-modal-button__remove">
+        Remove from favorites
+        <span>
+          <svg class="exercise-modal-button__remove-icon">
+            <use
+              href="/team-eleven/assets/javascript-55be6e3b.svg#icon-trash"
+              width="18"
+              height="18"
+            ></use>
+          </svg>
+        </span>
+      </button>
+    </div>
   </div>
-  </div>
-  
+</div>
 
 <div id="ratingModal" class="modal">  
 <div class="container">
