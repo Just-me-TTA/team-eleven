@@ -17,7 +17,7 @@ window.matchMedia('(min-width: 428px)').addEventListener('change', e => {
   headerOpenMenuBtn.setAttribute('aria-expanded', false);
 });
 
-const menuLinks = document.querySelectorAll('.header-nav-link');
+const menuLinks = document.querySelectorAll('.header-menu-link');
 
 menuLinks.forEach(menuLink => {
   const linkPath = new URL(menuLink.href).pathname;
