@@ -7,12 +7,9 @@ img {
 }
 .quote {
   background-color: #F4F4F4;
-
   width: 335px;
-
   margin: 0 auto;
 }
-
 .quote-block{
   width: 335px;
   height: 188px;
@@ -32,8 +29,6 @@ img {
   height: 20px;
 
 }
-
-
 .quote-text {
   width: 243px;
   padding-left: 18px;
@@ -44,7 +39,6 @@ img {
   line-height: 1;
   height: 20px;
 }
-
 .quote-block-markup {
   display: flex;
 }
@@ -54,7 +48,6 @@ img {
   font-weight: 400;
   line-height: 1.28;
   padding-left: 52px;
-  height: 116px;
   display: block;
   justify-content: space-between;
   align-items: flex-end;
@@ -67,13 +60,12 @@ img {
   margin-bottom: 16px;
 
 }
-
 .js-quote-autor {
   color: #F4F4F4;
 
 }
 .quote-imeges {
-  background-image: url(./img/women-mobil.jpg);
+  background-image: url(/img/women-mobil.jpg);
   width: 335px;
   height: 242px;
   margin-bottom: 20px;
@@ -85,13 +77,11 @@ img {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(./img/women-mobil-2x.jpg);
+        background-image: url(/img/women-mobil-2x.jpg);
         background-size: 335px 242px;
 
       }
     }
-
-
 
 .quote-info-block {
   width: 335px;
@@ -99,58 +89,39 @@ img {
   background-color: #fff;
   border-radius: 20px;
   display: flex;
-  padding-bottom: 20px;
-
+  padding: 20px;
   margin-bottom: 80px;
-
-
 }
-
 .quote-info-icon {
   width: 32px;
   height: 32px;
   background-color: #242424;
   border-radius: 50%;
   display: flex;
-  margin: 20px;
+  margin-right: 18px;
   justify-content: center;
   align-items: center;
-
-
-
 }
 .icon-dumbbell {
   width: 20px;
   height: 20px;
   fill: #F4F4F4;
   justify-content: center;
-
 }
-
 .quote-info-title {
-
   color: #242424;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
   height: 20px;
-
-
-}
-.quote-info-text {
-  margin-top: 20px;
-  width: 245px;
-  height: 105px;
-
+  margin-bottom: 4px;
 }
 .quote-info-content {
   color: rgba(36, 36, 36, 0.60);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
-  margin-top: -15px;
   padding-bottom: 16px;
-
 }
 .quote-content-text {
   overflow: hidden;
@@ -181,41 +152,33 @@ img {
     padding: 0 32px 0 32px;
     column-gap: 16px;
     row-gap: 32px;
-
   }
 
   .quote-block {
-    padding: 0;
+    margin: 0;
+    padding: 40px;
     width: 400px;
     height: 249px;
 
   }
-  .quote-block-markup {
-    padding: 0;
-    padding-right: 0;
-
-  }
-  .quote-icon-runner {
-    margin-top: 40px;
-    margin-left: 40px;
-  }
-  .quote-icon-quotes {
-    margin-top: 40px;
-    margin-right: 40px;
-    justify-content: flex-end;
-    margin-left: 43px;
-  }
 
   .quote-text {
-    margin-top: 40px;
+    padding-left: 16px;
+    /* margin-top: 40px;
     font-size: 24px;
     line-height: 1.33;
-    height: 32px;
+    height: 32px; */
   }
-
+  .quote-icon-quotes {
+    margin-left: auto;
+  }
   .js-quote {
-    padding-left: 90px;
+    padding: 0;
+    margin-left: 50px;
+    width: 270px;
     height: 131px;
+    /* padding-left: 90px;
+    height: 131px; */
   }
   .js-quote-text {
     width: 270px;
@@ -225,9 +188,10 @@ img {
   .js-quote-autor {
     height: 24px;
   }
-  .quote-imeges {
 
-    background-image: url(./img/women-tabl.jpg);
+  .quote-imeges {
+    margin: 0;
+    background-image: url(/img/women-tabl.jpg);
 
 
     width: 288px;
@@ -238,65 +202,77 @@ img {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       .quote-imeges {
-        background-image: url(./img/women-tabl-2x.jpg);
+        background-image: url(/img/women-tabl-2x.jpg);
         background-size: 100% ;
 
       }
     }
 
-}
+  .quote-info-block {
+    width: 400px;
+    height: 249px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    padding: 40px;
+      /* padding: 20px;
+      background-color: #fff;
+      border-radius: 20px;
+      display: flex;
+      margin-bottom: 80px; */
+    }
+  .quote-info-icon {
+    margin-right: 16px;
+  }
+  .quote-info-text {
+    width: 270px;
+    height: 169px;
+  }
+  .quote-info-title {
+    height: 32px;
 
-.quote-info-block {
-  width: 400px;
-  height: 249px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 20px;
-  display: flex;
-  margin-bottom: 80px;
-}
+    margin-bottom: 6px;
 
-.quote-info-title {
- height: 32px;
- padding: 0;
- margin-bottom: 16px;
+   }
+   .quote-info-content {
+    height: 18px;
+    margin-bottom: 16px;
+  }
+  .quote-content-text {
+    padding-top: 5px;
+    width: 270px;
+    height: 97px;
+  }
 
-}
-.quote-info-content {
-  height: 18px;
-  margin-bottom: 16px;
-}
-.quote-content-text {
-  padding-top: 5px;
-  width: 270px;
-  height: 97px;
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1440pxpx;
+    width: 508px;
   }
   .quote {
-    width: 1440pxpx;
+    width: 508px;
     row-gap: 32px;
     display: block;
   }
   .quote-block {
-    margin-right: 32px;
+    /* margin-right: 32px; */
     width: 444px;
     height: 230px;
     margin-bottom: 32px;
   }
-
-  .quote-icon-quotes {
-    margin-left: 67px;
-
-  }
   .quote-text {
-    padding-left: 16px;
+    height: 32px;
+  }
+  .js-quote {
+    width: 314px;
+    height: 112px;
+  }
+  .js-quote-text {
+    height: 70px;
   }
   .quote-imeges {
-    background-image: url(./img/women-desktop.jpg);
+    background-image: url(/img/women-desktop.jpg);
     padding-right: 0;
     width: 444px;
     height: 242px;
@@ -307,53 +283,44 @@ img {
     (min-resolution: 2dppx) {
       .quote-imeges {
 
-        background-image: url(./img/women-desktop-2x.jpg);
+        background-image: url(/img/women-desktop-2x.jpg);
 
 
       }
     }
 
   .quote-info-block {
-    padding: 0;
     width: 444px;
     height: 315px;
-    background-color: #fff;
-    border-radius: 20px;
-    display: flex;
-    margin-bottom: 80px;
-  }
-  .quote-info-icon {
-    margin: 40px 0 0 40px;
-
-    width: 32px;
-  }
-
-  .quote-info-title {
-    color: #242424;
-    font-size: 24px;
-    line-height: 1.33;
-    padding-bottom: 6px;
-
   }
   .quote-info-text {
-
+    width: 314px;
+    height: 235px;
+  }
+  .quote-info-content {
+    height: 18px;
     padding: 0;
-    margin-top: 40px;
-    margin-left: 16px;
   }
 
   .quote-content-text {
     width: 314px;
     height: 163px;
-
     color: #242424;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.2;
     min-width: 314px;
     height: 163px;
-    padding: 0;
   }
-
 }
+
+
+
+
+
+
+
+
+
+
 
