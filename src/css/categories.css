@@ -190,6 +190,64 @@
     background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(imgURL), lightgray -91.949px 0px / 160.73% 100.413% no-repeat;
 }
 
+/* СТИЛІ КАРТОК ВПРАВ  */
+.exercise-card{
+    /* поставив щоб бачити межі карток */
+    background-color: black;}
+
+.exercise-list{}
+
+.exercise-item{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background: #fff;
+    width: 100%;
+    padding: 16px;
+}
+
+.rating-start-exercise{}
+
+.rating-start-exercise-wrap {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 27px;
+}
+.title-exercise-wrap {
+    display: flex;
+    gap: 4px;
+    align-items: center;}
+
+.workout{
+    color:rgba(36, 36, 36, 1);
+    font-weight: 500;
+    border-radius: 15px;
+    border: 1px solid rgba(36, 36, 36, 1);
+    padding: 5px 7.5px;
+    margin-right: 16px;
+    font-size: 12px;
+    text-transform: uppercase;}
+
+.rating-exercise-card {}
+
+.start-exercise{
+    border: none;
+    background-color: transparent;
+    }
+
+
+.title-exercise{}
+
+.calories-target{}
+
+.burned-calories{}
+
+.time-exercise{}
+
+.part-exercise{}
+
+.target {}
+
 @media screen and (min-width:1280px) {
     .container-for-images-and-btn {
         max-width: 900px;
