@@ -1,16 +1,13 @@
-const mobileMenu = document.querySelector('.header-mobi-menu-container');
-const openMenuBtn = document.querySelector('.header-open-menu-btn');
-const closeMenuBtn = document.querySelector('.header-close-mob-menu-btn');
 
-if (mobileMenu && openMenuBtn && closeMenuBtn) {
-  openMenuBtn.addEventListener('click', getOpen);
-  closeMenuBtn.addEventListener('click', getClose);
-}
+const headerMobileMenu = document.querySelector('.header-mobi-menu-container');
+const headerOpenMenuBtn = document.querySelector('.header-open-menu-btn');
+const headerCloseMenuBtn = document.querySelector('.header-close-mob-menu-btn');
 
-function getOpen() {
-  mobileMenu.classList.add('is-open');
-}
-
-function getClose() {
-  mobileMenu.classList.remove('is-open');
-}
+const toggleHeaderMenu = () => {
+  const isHeaderMenuOpen =
+    headerOpenMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+  headerOpenMenuBtn.setAttribute('aria-expanded', !isHeaderMenuOpen);
+  headerMobileMenu.classList.toggle('header-is-open');
+};
+headerOpenMenuBtn.addEventListener('click', toggleHeaderMenu);
+headerCloseMenuBtn.addEventListener('click', toggleHeaderMenu);
