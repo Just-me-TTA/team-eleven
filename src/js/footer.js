@@ -43,4 +43,6 @@ socialIcons.forEach(icon => {
     icon.addEventListener('mouseleave', () => {
         icon.style.transform = 'scale(1)';
     });
+
+    
 });
