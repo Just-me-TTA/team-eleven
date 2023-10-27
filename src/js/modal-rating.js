@@ -171,6 +171,7 @@ const refs = {
   
     serviceQuest(userData, exerciseId)
       .then(() => alert('Success!'))
+      .then (() => closeModalInput())
       .catch(() => alert('Oops! Check the information'));
   }
   
