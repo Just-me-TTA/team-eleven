@@ -1,3 +1,4 @@
+import svgSprite from "../img/iconfull.svg";
 
 const btnCategories = document.querySelectorAll(".btn-categories");
 const containerForGalleryItem = document.querySelector('.js-container-gallery-item');
@@ -143,17 +144,17 @@ function handleResponseExercise(data) {
         <p class="workout">Workout</p>
         <p class="rating-exercise-card">${rating}</p>
         <svg class="icon-star-exercises" width="18" height="18" fill="rgba(238, 161, 12, 1)">
-          <use href="/img/iconfull.svg#icon-star"></use>
+          <use href="${svgSprite}#icon-star"></use>
         </svg>
         <button type="button"  data-modal-open class="start-exercise openModalBtn">Start
           <svg class="icon-right-arrow" width="18" height="18" stroke="black">
-            <use href="/img/iconfull.svg#icon-right-arrow"></use>
+            <use href="${svgSprite}#icon-right-arrow"></use>
           </svg>
         </button>
         </div>
         <div class = "title-exercise-wrap">
             <svg class="icon-title-exercises" width="24" height="24" stroke="black">
-            <use href="/img/iconfull.svg#icon-run-men"></use>
+            <use href="${svgSprite}#icon-run-men"></use>
           </svg>
           <h2 class="title-exercise">${name}</h2>
         </div>
