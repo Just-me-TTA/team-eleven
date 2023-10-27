@@ -287,7 +287,7 @@ img {
     width: 508px;
     row-gap: 32px;
     display: block;
-    display: none;
+    
   }
 
   .quote-block {
@@ -329,7 +329,7 @@ img {
     }
   }
 
-  
+
   .quote-info-block {
     width: 444px;
     height: 315px;
