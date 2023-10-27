@@ -280,7 +280,7 @@ img {
 @media screen and (min-width: 1440px) {
   .container {
     width: 508px;
-    display: none;
+  
   }
 
   .quote {
