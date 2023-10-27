@@ -253,11 +253,13 @@ img {
 @media screen and (min-width: 1440px) {
   .container {
     width: 508px;
+    display: none;
   }
   .quote {
     width: 508px;
     row-gap: 32px;
     display: block;
+    display: none;
   }
   .quote-block {
     /* margin-right: 32px; */
