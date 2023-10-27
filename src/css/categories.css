@@ -221,7 +221,14 @@ exercise-for-card-category {
     background-color: transparent;
 }
 
-
+.icon-circle {
+    background-color: rgba(36, 36, 36, 1); ;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
 .title-exercise {
     color: #242424;
         font-feature-settings: 'clig' off, 'liga' off;

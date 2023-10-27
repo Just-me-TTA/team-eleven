@@ -153,9 +153,10 @@ function handleResponseExercise(data) {
         </button>
         </div>
         <div class = "title-exercise-wrap">
-            <svg class="icon-title-exercises" width="24" height="24" stroke="black">
-            <use href="${svgSprite}#icon-run-men"></use>
-          </svg>
+            <div class="icon-circle">
+            <svg class="icon-title-exercises" width="24" height="24" fill="white" stroke="black">
+            <use href="${svgSprite}#icon-run-men2"></use>
+            </svg></div>
           <h2 class="title-exercise">${name}</h2>
         </div>
         <div class="calories-target">
