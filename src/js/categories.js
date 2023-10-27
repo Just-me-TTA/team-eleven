@@ -1,9 +1,11 @@
 
+
 const btnCategories = document.querySelectorAll(".btn-categories");
 const containerForGalleryItem = document.querySelector('.js-container-gallery-item');
 const contCategor = document.querySelector('.cont-categor');
 const exerciseForCardCategory = document.querySelector('.exercise-for-card-category');
 const categoryDescr = document.getElementById('category-descr');
+  const openModalButtons = document.querySelectorAll('.openModalBtn');
 // Отримайте кнопки сторінок
 const btnNumbers = document.querySelectorAll(".btn-number");
 
@@ -12,6 +14,7 @@ const baseAPIUrl = 'https://your-energy.b.goit.study/api';
 let activeFilter = 'Body parts';
 let activePage = 1;
 const activeLimit = 9;
+let exerciseId = null;
 // Опишіть функцію для завантаження категорій за вибраним фільтром та сторінкою
 function loadCategories() {
   // Отримайте дані для поточного фільтра та сторінки
@@ -35,7 +38,7 @@ function loadCategories() {
 
 function handleResponse(data) {
   let results = data.results;
-  let resultsHtml = results.map(({ filter, name, imgURL }) => {
+  let resultsHtml = results.map(({ filter, name, imgURL,_id }) => {
     const formattedName = name.charAt(0).toUpperCase() + name.slice(1);
     const dataObjectString = JSON.stringify({
       filter: filter,
@@ -86,32 +89,55 @@ btnNumbers.forEach(element => {
   });
 });
 
-
+function openExerciseModal(exerciseId, exerciseData) {
+  // Ваш код для відкриття модального вікна та відображення інформації про вправу
+  console.log('Open exercise modal with ID:', exerciseId);
+  console.log('Exercise Data:', exerciseData);
+}
 
 function initializeExerciseCardEvents() {
-  document.querySelector('.js-container-gallery-item').addEventListener('click', function (event) { 
+  document.querySelector('.js-container-gallery-item').addEventListener('click', function (event) {
     exerciseForCardCategory.classList.remove('hiden');
     contCategor.style.display = 'none';
-    const galleryItem = event.target.closest('.js-gallery-item')
-    if (galleryItem) { 
+    const galleryItem = event.target.closest('.js-gallery-item');
+    if (galleryItem) {
       let filterObjString = galleryItem.dataset.filterObj;
       let filterObj = null;
       if (filterObjString.length) {
         try {
-        filterObj = JSON.parse(filterObjString);
-          
-        } catch(error) {
+          filterObj = JSON.parse(filterObjString);
+        } catch (error) {
           console.error('An error occurred while parsing JSON:', error);
         }
       }
       if (filterObj) {
         getExercises(filterObj);
       }
-    } 
+    }
+  });
+  const openModalBtn = document.querySelector('.openModalBtn')
+  const addFavoriteButton=  document.querySelector('.add-favorite')
+let isModalOpen = false;
+const openModalButtons = document.querySelectorAll('.openModalBtn');
+ ref.openModalBtn.addEventListener("click", () => openExerciseModal(exerciseId));
+ref.closeModalBtn.addEventListener("click", closeExerciseModal);
+
+  openModalButtons.forEach((button) => {
+    const exerciseId = button.dataset.id;
+    button.addEventListener('click', () => {  
+      fetch(`${baseAPIUrl}/exercises/${exerciseId}`)
+        .then((response) => response.json())
+        .then((exerciseData) => {
+         openExerciseModal(exerciseId, exerciseData);
+        })
+        .catch((error) => {
+          console.error('Помилка при отриманні вправи з сервера:', error);
+        });
+    });
   });
 }
 
-function getExercises({ filter, name }) {
+function getExercises({ filter, name}) {
   const filterParamMap = {
     'Body parts': 'bodypart',
     'muscles': 'muscles',
@@ -135,7 +161,7 @@ function getExercises({ filter, name }) {
 
 function handleResponseExercise(data) {
   let resultExercise = data.results;
-  let resultsExerciseHtml = resultExercise.map(({ bodypart, burnedCalories, name,  rating, target, time
+  let resultsExerciseHtml = resultExercise.map(({ bodypart, burnedCalories, name,  rating, target, time,exerciseId
   }) => {
     return `<li class = "exercise-item">
       <div class="rating-start-exercise">
@@ -143,17 +169,17 @@ function handleResponseExercise(data) {
         <p class="workout">Workout</p>
         <p class="rating-exercise-card">${rating}</p>
         <svg class="icon-star-exercises" width="18" height="18" fill="rgba(238, 161, 12, 1)">
-          <use href="/img/iconfull.svg#icon-star"></use>
+          <use href="./img/iconfull.svg#icon-star"></use>
         </svg>
-        <button type="button"  data-modal-open class="start-exercise openModalBtn">Start
-          <svg class="icon-right-arrow" width="18" height="18" stroke="black">
-            <use href="/img/iconfull.svg#icon-right-arrow"></use>
-          </svg>
-        </button>
+        <button type="button" class="openModalBtn" data-modal-open data-id="64f389465ae26083f39b18ae">Start
+  <svg class="icon-right-arrow" width="18" height="18" stroke="black">
+    <use href="./img/iconfull.svg#icon-right-arrow"></use>
+  </svg>
+</button>
         </div>
         <div class = "title-exercise-wrap">
             <svg class="icon-title-exercises" width="24" height="24" stroke="black">
-            <use href="/img/iconfull.svg#icon-run-men"></use>
+                <use href="./img/iconfull.svg#icon-run-men"></use>
           </svg>
           <h2 class="title-exercise">${name}</h2>
         </div>
@@ -177,3 +203,5 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeExerciseCardEvents();
 }  
 });
+
+

@@ -1,5 +1,5 @@
 .categories {
-    border: 1px solid red;
+   
 
 }
 
@@ -152,28 +152,52 @@
 }
 
 /* СТИЛІ КАРТОК ВПРАВ  */
+exercise-for-card-category {
+    background: #F4F4F4;
+
+}
 .exercise-card {
-    /* поставив щоб бачити межі карток */
-    background-color: black;
+    background-color: #F4F4F4;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  
 }
 
-.exercise-list {}
+.exercise-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    gap: 32px;
+    justify-content: flex-start;
+ 
+}
 
 .exercise-item {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     background: #fff;
-    width: 100%;
+   width: 344px;
+   height: 141px;
     padding: 16px;
+    margin-left: 32px;
+    
 }
+.icon-run-men{
+    color:#242424;
+    stroke: #242424;
+}
+.icon-title-exercises{
+    color: #242424;
+    stroke: #242424;
 
+}
 .rating-start-exercise {}
 
 .rating-start-exercise-wrap {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    margin-bottom: 27px;
+    margin-bottom: 17px;
 }
 
 .title-exercise-wrap {
@@ -193,7 +217,9 @@
     text-transform: uppercase;
 }
 
-.rating-exercise-card {}
+.rating-exercise-card {
+
+}
 
 .start-exercise {
     border: none;
@@ -201,29 +227,85 @@
 }
 
 
-.title-exercise {}
+.title-exercise {
+    color: #242424;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Neue Montreal;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+}
 
-.calories-target {}
+.calories-target {
+    display: flex;
+    margin-top: 18px;
+   
+    justify-content: space-between;
 
-.burned-calories {}
+}
 
-.time-exercise {}
+.burned-calories {
+    color: rgba(36, 36, 36, 0.40);
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Neue Montreal;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+}
 
-.part-exercise {}
+.time-exercise {
+    color: #242424;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Neue Montreal;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+}
 
-.target {}
+.part-exercise {
+    color: rgba(36, 36, 36, 0.40);
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Neue Montreal;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+}
 
+.target {
+    color: rgba(36, 36, 36, 0.40);
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Neue Montreal;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+}
+.openModalBtn{
+        background-color: none;
+            stroke: none;
+            color: none;
+            background-color: transparent;
+            border:none;
+            margin-left: auto;
+}
 @media screen and (max-width: 376px) {
 
     .categories {
         padding-left: 20px;
         padding-right: 20px;
+        
+
     }
 
     .btn-filter-and-title {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        background-color: #F4F4F4;
     }
 
     .btn-filter-and-title h2 {
@@ -280,6 +362,10 @@
         max-width: 225px;
         margin-bottom: 32px;
     }
+    .exercise-item{
+ display: flex;
+ flex-wrap: wrap;
+    }
 
 }
 
@@ -331,6 +417,13 @@
     .word-of-the-day {
         margin-right: 32px;
     }
+
+    .exercise-card{
+        display: flex;
+        flex-wrap: wrap;
+       
+    }
+    
 }
 
 

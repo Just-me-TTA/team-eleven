@@ -36,27 +36,6 @@ const openModalButtons = document.querySelectorAll('.openModalBtn');
  ref.openModalBtn.addEventListener("click", () => openExerciseModal(exerciseId));
 ref.closeModalBtn.addEventListener("click", closeExerciseModal);
 
-openModalButtons.forEach((button) => {
-  button.addEventListener('click', async (event) => {
-    const exerciseCard = event.target.closest('.js-workout-card');
-    if (exerciseCard) {
-      const exerciseId = exerciseCard.getAttribute('data-id');
-      if (exerciseId) {
-        try {
-          const response = await axios.get(`${BASE_URL}/exercises/${exerciseId}`);
-          if (response.status === 200) {
-            const exerciseData = response.data;
-            updateModalWithExerciseData(exerciseData);
-          } else {
-            console.error('Помилка запиту до API');
-          }
-        } catch (error) {
-          console.error('Помилка при взаємодії з API', error);
-        }
-      }
-    }
-  });
-});
 
 function updateModalWithExerciseData(exerciseData) {
   // Оновити модальне вікно з отриманими даними

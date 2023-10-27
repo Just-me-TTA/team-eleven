@@ -1,6 +1,7 @@
 .container-filter-exercise {
     display: flex;
     text-align: center;
+    background-color: #F4F4F4;
 }
 
 .search-widget {
@@ -49,3 +50,4 @@
     padding: 10px;
     cursor: pointer;
 }
+
