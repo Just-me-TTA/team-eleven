@@ -118,6 +118,7 @@
     gap: 8px;
     padding: 8px 36px;
     justify-content: center;
+    align-items: center;
   }
   .header-nav-list-item {
     display: flex;
@@ -130,17 +131,22 @@
     align-items: center;
     border-radius: 30px;
     color: #f4f4f4;
+    border: 2px solid #242424;
   }
   .home-nav {
     color: #242424;
     background-color: #f4f4f4;
   }
+  .header-link-home {
+    color: #242424;
+    background-color: #f4f4f4;
+  }
   .header-link-activ:active {
-    outline: 1px solid rgba(244, 244, 244, 0.3);
+    border: 2px solid rgba(244, 244, 244, 0.3);
     transition: transform 250ms ease-in-out;
   }
   .header-link-activ:hover {
-    outline: 1px solid rgba(244, 244, 244, 0.3);
+    border: 2px solid rgba(244, 244, 244, 0.3);
     transition: transform 250ms ease-in-out;
   }
 
