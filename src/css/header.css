@@ -137,10 +137,7 @@
     color: #242424;
     background-color: #f4f4f4;
   }
-  .header-link-home {
-    color: #242424;
-    background-color: #f4f4f4;
-  }
+
   .header-link-activ:active {
     border: 2px solid rgba(244, 244, 244, 0.3);
     transition: transform 250ms ease-in-out;
