@@ -5,7 +5,6 @@ import axios from 'axios';
 const BASE_URL = 'https://your-energy.b.goit.study/api';
 
 const ref = {
-    openModalBtn: document.querySelector('.openModalBtn'),
     addFavoriteButton: document.querySelector('.add-favorite'),
     giveRatingButton: document.querySelector('.give-rating'),
     exerciseList: document.querySelector('.exercise'),
@@ -33,7 +32,6 @@ let isModalOpen = false;
 let exerciseId = "64f389465ae26083f39b18ae";
 const favoriteIdList = JSON.parse(localStorage.getItem('LS_FAVORITES_ID')) || [];
 const openModalButtons = document.querySelectorAll('.openModalBtn');
- ref.openModalBtn.addEventListener("click", () => openExerciseModal(exerciseId));
 ref.closeModalBtn.addEventListener("click", closeExerciseModal);
 
 openModalButtons.forEach((button) => {
@@ -70,7 +68,7 @@ function updateModalWithExerciseData(exerciseData) {
   modal.classList.add('is-open');
 }
 
-function openExerciseModal(exerciseId) {
+export function openExerciseModal(exerciseId) {
     ref.modal.classList.add("is-open");
     checkLocalStorageForId(exerciseId);
 }
