@@ -1,5 +1,5 @@
 import svgSprite from "../img/iconfull.svg";
-
+import { openExerciseModal } from "./modal-exercise";
 const btnCategories = document.querySelectorAll(".btn-categories");
 const containerForGalleryItem = document.querySelector('.js-container-gallery-item');
 const contCategor = document.querySelector('.cont-categor');
@@ -123,7 +123,6 @@ function getExercises({ filter, name }) {
     .then(response => response.json())
     .then(data => {
       // Обробка отриманих даних
-      let a = 5;
       handleResponseExercise(data);
     })
     .catch(error => {
@@ -136,7 +135,7 @@ function getExercises({ filter, name }) {
 
 function handleResponseExercise(data) {
   let resultExercise = data.results;
-  let resultsExerciseHtml = resultExercise.map(({ bodypart, burnedCalories, name,  rating, target, time
+  let resultsExerciseHtml = resultExercise.map(({ bodypart, burnedCalories, name,  rating, target, time, _id
   }) => {
     return `<li class = "exercise-item">
       <div class="rating-start-exercise">
@@ -146,7 +145,7 @@ function handleResponseExercise(data) {
         <svg class="icon-star-exercises" width="18" height="18" fill="rgba(238, 161, 12, 1)">
           <use href="${svgSprite}#icon-star"></use>
         </svg>
-        <button type="button"  data-modal-open class="start-exercise openModalBtn">Start
+        <button type="button"   data-open='${_id}' class="start-exercise openModalBtn">Start
           <svg class="icon-right-arrow" width="18" height="18" stroke="black">
             <use href="${svgSprite}#icon-right-arrow"></use>
           </svg>
@@ -179,3 +178,20 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeExerciseCardEvents();
 }  
 });
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("openModalBtn")) {
+    //  exerciseId = event.target.getAttribute("data-open");
+    let dataOpen = event.target.dataset.open;
+    console.log(dataOpen);
+    openExerciseModal(dataOpen);
+    // console.log(exerciseId); // Optionally, you can log the value to verify it's set correctly.
+  }
+});
+
+
+
+
+
+
+
