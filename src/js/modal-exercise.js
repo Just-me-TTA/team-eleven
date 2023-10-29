@@ -131,10 +131,12 @@ function removeFromFavorites(exerciseId) {
 
 function updateLocalStorageFavorites() {
   const favoriteData = JSON.stringify(favoriteIdList);
-  localStorage.setItem('LS_FAVORITES_ID', favoriteData); // save localStorage
+  localStorage.setItem('LS_FAVORITES_ID', favoriteData);
 }
 
 ref.giveRatingButton.addEventListener('click', function() {
     ref.modal.classList.remove('is-open');
     ref.ratingModal.classList.add('is-open');
 });
+
+

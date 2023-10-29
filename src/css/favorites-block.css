@@ -1,0 +1,126 @@
+
+.exercise-card {
+    background-color: #F4F4F4;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+}
+
+.exercise-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    gap: 32px;
+    justify-content: flex-start;
+    background: #fff;
+    border-radius: 15px;
+    width: 344px;
+    height: 141px;
+    margin-left: 32px;
+
+}
+
+.exercise-item {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.workout {
+    color: rgba(36, 36, 36, 1);
+    font-weight: 500;
+    border-radius: 15px;
+    border: 1px solid rgba(36, 36, 36, 1);
+    padding: 5px 7.5px;
+    margin-right: 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 5px 7.5px;
+}
+.rating-start-exercise-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    padding: 16px;
+}
+
+.title-exercise-wrap {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.icon-title-exercises {
+    color: #242424;
+    stroke: #242424;
+
+}
+.title-exercise {
+    color: #242424;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.calories-target {
+    display: flex;
+    margin-top: 18px;
+    gap:10px;
+    justify-content: space-between;
+
+}
+
+.burned-calories {
+    color: rgba(36, 36, 36, 0.40);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.time-exercise {
+    color: #242424;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.part-exercise {
+    color: rgba(36, 36, 36, 0.40);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.target {
+    color: rgba(36, 36, 36, 0.40);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Neue Montreal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.openModalBtn {
+    background-color: none;
+    stroke: none;
+    color: none;
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    padding-left: 100px;
+}
+.icon-right-arrow{
+    margin-left: 8px;
+}
