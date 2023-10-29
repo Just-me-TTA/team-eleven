@@ -17,7 +17,6 @@ window.matchMedia('(min-width: 428px)').addEventListener('change', e => {
   headerMobileMenu.classList.remove('is-open');
   headerOpenMenuBtn.setAttribute('aria-expanded', false);
 });
-
 const menuLinks = document.querySelectorAll('.header-menu-link');
 
 menuLinks.forEach(menuLink => {
